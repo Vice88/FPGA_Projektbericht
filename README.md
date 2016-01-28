@@ -1,4 +1,3 @@
 # FPGA_Projektbericht
-log file
+The documentation of the project for the chair of computer architecture.
 
-28.01.2016 , Freiburg 15:14
