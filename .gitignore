@@ -1,0 +1,8 @@
+# this files would be ignored if pushed to the server
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.gz
+
