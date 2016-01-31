@@ -48,25 +48,19 @@ The intiation is done by an internal host which runs a C/C++ programm. This C/C+
 Software used on the Altera Cyclone V FPGA (5SCEMA5F31C6N) on DE1-SoC: 
 \begin{enumerate}
   \item Quartus II Version 14.1/15.0 (Windows 7/8.1)
+  
+ 
 \end{enumerate}
-The workflow is the folowing:
-\begin{itemize}
- \item - insert fpga workflow etc. 
-\end{itemize}
-
 
 
 % \subsubsection{software code}
-% maybe comment on created code , what function what block
 
 % \include{ProblemsPR}
 \subsection{Problems}
 No permission to use partial reconfiguration feature in Quartus Software.
 Get a new license which allows us to use the feature but our Cyclone V FPGA is not supporting this
-feature. A more special FPGA is required which is not affordable. After working a few weeks on the field of partial reconfiguration a big problem occurs. 
-Altera do not offer a permission to this feature on this hardware.
-Partial reconfiguration is only available for a new, more expensive board.\\
-\textbf{The status quo at the time of cancellation this task}\\
+feature. A more special FPGA is required which is not affordable.\\
+\textbf{status quo - cancellation of the poject}\\
 \begin{itemize}
   \item literature survey
   \item top level design

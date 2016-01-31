@@ -1,8 +1,6 @@
 \section{Partial reconfiguration}
 \subsection{Idea of partial reconfiguration}
-the reconfiguration should be partial, so that a part of the fpga do not stop the process and the
-other part will be reconfigured. reconfiguration with internal host. run a C/C++ programm on hard
-processor of the board to initiate the partial reconfiguration. hadware-processor-system get a C/C++ programm out of a RAM
-to initiate the partial reconfiguartion. partial reconfiguration means only a part of the FPGA
-will reconfigured while another part of the FPGA will still running. the partial reconfiguration
-only change a part of the LAB.
+A field programmable gate array (FPGA) is an integrated circuit which can handle digital logic. This circuit can be configured to handle the desired function. 
+The reconfiguration is done by an external pc which programs the fpga. The idea of the partial reconfiguration is, that a part of the fpga will work continuously while the other part is reconfigured, reprogrammed.
+This reconfiguration should be done by an external processor on the development kit which initates the reconfiguration und programs the desired locig cells of the fpga while the other part remains in its process.
+The intiation is done by an internal host which runs a C/C++ programm. This C/C++ programm is stored in the RAM (read access memory) of the development kit board.
