@@ -1,7 +1,6 @@
 %%document preambel
 
 \documentclass{scrartcl}
-%\usepackage{german}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
 %\usepackage{beramono}% monospaced font with bold variant
@@ -28,32 +27,59 @@
 
 \begin{document}
 
-\title{Partial reconfiguration and fault simulation with a development kit board from Altera}
+\title{Partial reconfiguration and fault simulation with Altera Cyclone V FPGA}
 \subtitle{Students project at the chair of computer architecture university freiburg}
-\author{M. Weiﬂ}
+\author{Markus Weiﬂ}
 \maketitle
 \tableofcontents
 \newpage
 
-% \include{IdeaPR}
+\section{HW/SW for this project}
+The Hardware and Software for both partial projects do not differ, so here is a short summary of the used hard- and software.
+\subsection{Hardware}
+The hardware used in this project were a "Terasic DE1-SoC Development Kit".  This development kit consists of a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex A9 processor, also named Hard-Processor-System (HPS),memories and interfaces (USB,JTAG,i2c). The communication interfaces are a onboard USB-Blaster II, USB 2.0 ports, UART, ethernet port and extended module for gpio pins.\\
+The fpga is the heart of the development kit and the mainly used component of the project. Here are some facts about the fpga Cyclone V:\\
+\begin{itemize}
+	\item 85000 logic cells
+	\item 4450 kb embedded memory
+	\item access to an external 64 MB static random access memory (SRAM)
+	\item low energy consumption
+	\item standard clock frequency is 50 MHz
+\end{itemize}
+The Cyclone V is configured with a JTAG interface, where a bitstream is loaded to the board. This bitstream is lost once the energy is off. Also available is the option to program an in-system programmable NOR flash memory, which safes the bitstream while power is taken off. Another way to program the fpga is to use the HPS. This is done while the boot progress with "U-Boot" or the "preloader" but it also works if the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, multiplexing of pins, configuration of the main memory and load the U-Boot.  The configuration of the main memory of the HPS and the AXI Bridges is important, because these have to grant the fpga access to this.\\ The \textbf{universal boot loader} initiates and tests hardware components and also download and execute application software. This bootloader is required to initiate the boot process of the unix-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables adress based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special adresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\ To work with an external C/C++ programm an operation system for the hps is needed. The chosen os is a linux system.
+
+
+\subsection{Software}
+The software used in this project were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is needed to generate VHDL- or Verilog programs which can be used by a FPGA. The software can be configured to reach different goals, e.g. time complexity, speed, optimization of compilation time, energy consumption etc.\\ QSYS is described as a tool for system integration to safe time, therefore cost, of developer by generating automatic connectionlogic of different components. The developed VHDL code from Quartus II software can be imported to QSYS to connect different components, e.g. on the DE-SoC1. QSYS has to initiate, configure and connect the HPS to the FPGA if they have to communication between each other.
+
 \section{Partial reconfiguration}
-\subsection{Idea of partial reconfiguration}
-A field programmable gate array (FPGA) is an integrated circuit which can handle digital logic. This circuit can be configured to handle the desired function. 
-The reconfiguration is done by an external pc which programs the fpga. The idea of the partial reconfiguration is, that a part of the fpga will work continuously while the other part is reconfigured, reprogrammed.
-This reconfiguration should be done by an external processor on the development kit which initates the reconfiguration und programs the desired locig cells of the fpga while the other part remains in its process.
+\subsection{Motivation}
+The idea of reconfigurating a fpga while the rest of it is still running is highly desirable. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. 
+
+Thanks to this partial reconfiguration the fpga can handle a new input while another part still executes its commands. 
+% The reconfiguration is initialised by an external pc which programs the fpga. 
+This reconfiguration is initialised by an external processor on the development kit and programs the desired locig cells of the fpga while the other part remains in its process.
+
 The intiation is done by an internal host which runs a C/C++ programm. This C/C++ programm is stored in the RAM (read access memory) of the development kit board.
 
-% \include{ImplementationPR}
-\subsection{Implementation}
-Software used on the Altera Cyclone V FPGA (5SCEMA5F31C6N) on DE1-SoC: 
-\begin{enumerate}
-  \item Quartus II Version 14.1/15.0 (Windows 7/8.1)
-\end{enumerate}
-The workflow is the folowing:
-\begin{itemize}
- \item - insert fpga workflow etc. 
-\end{itemize}
 
+\subsection{Implementation}
+The idea of the project were to implement an internal host, which initialises the reconfiguration with a c/c++ program. To do so, the internal host has to communicate with the processor and fpga - where is the internal host stored?-
+The communication between HPS and FPGA, the main memory and in- and output interfaces is an important point.
+There are different options for the communication between HPS and FPGA.
+\begin{enumerate}
+	\item Advanced extensible interface bus bridges (AXI)
+	\begin{enumerate}
+		\item Lightweight HPS-to-FPGA bridge
+		\item HPS-to-FPGA bridge
+		\item FPGA-to-HPS bridge
+	\end{enumerate}
+	\item FPGA-to-SDRAM
+\end{enumerate}
+FPGA access the memory and load the bitstream safed in the sdram??
+\textbf{which option is used in our project? which one should be used?}
+
+The FPGA development process is done by Quartus II and QSYS. Quartus II creates the FPGA components in VHDL, while QSYS connects different system components which communicate and access each other. This information are required to generate the "preloader". This "preloader" coordinates the boot process. The next step of booting is the "universal boot loader" which configures the fpga and load the "linux-kernel". The Avalon-MM-Interface is required to grant the fpga access to the main memory of the HPS. The Avalon-MM-Interface is a read-/write interface which uses master/slave connections.
 
 
 % \subsubsection{software code}

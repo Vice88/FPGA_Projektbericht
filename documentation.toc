@@ -1,14 +1,15 @@
-\contentsline {section}{\numberline {1}Partial reconfiguration}{2}
-\contentsline {subsection}{\numberline {1.1}Idea of partial reconfiguration}{2}
-\contentsline {subsection}{\numberline {1.2}Implementation}{2}
-\contentsline {subsection}{\numberline {1.3}Problems}{2}
-\contentsline {subsection}{\numberline {1.4}Discussion}{2}
-\contentsline {subsection}{\numberline {1.5}Appendix - VHDL Code}{3}
-\contentsline {subsubsection}{\numberline {1.5.1}PR top level}{3}
-\contentsline {section}{\numberline {2}Fault simulation}{6}
-\contentsline {subsection}{\numberline {2.1}Idea of fault simulation}{6}
-\contentsline {subsection}{\numberline {2.2}Implementation}{7}
-\contentsline {subsubsection}{\numberline {2.2.1}Soft- and Hardware}{7}
-\contentsline {subsubsection}{\numberline {2.2.2}software code}{7}
-\contentsline {subsection}{\numberline {2.3}Problems}{8}
-\contentsline {subsection}{\numberline {2.4}Discussion}{9}
+\contentsline {section}{\numberline {1}HW/SW for this project}{2}
+\contentsline {subsection}{\numberline {1.1}Hardware}{2}
+\contentsline {subsection}{\numberline {1.2}Software}{3}
+\contentsline {section}{\numberline {2}Partial reconfiguration}{3}
+\contentsline {subsection}{\numberline {2.1}Motivation}{3}
+\contentsline {subsection}{\numberline {2.2}Implementation}{3}
+\contentsline {subsection}{\numberline {2.3}Problems}{4}
+\contentsline {subsection}{\numberline {2.4}Discussion}{4}
+\contentsline {subsection}{\numberline {2.5}Appendix - VHDL Code}{5}
+\contentsline {subsubsection}{\numberline {2.5.1}PR top level}{5}
+\contentsline {section}{\numberline {3}Fault simulation}{8}
+\contentsline {subsection}{\numberline {3.1}Idea of fault simulation}{8}
+\contentsline {subsection}{\numberline {3.2}Implementation}{9}
+\contentsline {subsection}{\numberline {3.3}Problems}{10}
+\contentsline {subsection}{\numberline {3.4}Discussion}{11}
