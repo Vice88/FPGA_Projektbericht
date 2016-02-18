@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {1}HW/SW for this project}{2}
+\contentsline {section}{\numberline {1}HW/SW prerequisite for this project}{2}
 \contentsline {subsection}{\numberline {1.1}Hardware}{2}
 \contentsline {subsection}{\numberline {1.2}Software}{3}
 \contentsline {section}{\numberline {2}Partial reconfiguration}{3}
@@ -6,10 +6,13 @@
 \contentsline {subsection}{\numberline {2.2}Implementation}{3}
 \contentsline {subsection}{\numberline {2.3}Problems}{4}
 \contentsline {subsection}{\numberline {2.4}Discussion}{4}
-\contentsline {subsection}{\numberline {2.5}Appendix - VHDL Code}{5}
-\contentsline {subsubsection}{\numberline {2.5.1}PR top level}{5}
-\contentsline {section}{\numberline {3}Fault simulation}{8}
-\contentsline {subsection}{\numberline {3.1}Idea of fault simulation}{8}
-\contentsline {subsection}{\numberline {3.2}Implementation}{9}
-\contentsline {subsection}{\numberline {3.3}Problems}{10}
-\contentsline {subsection}{\numberline {3.4}Discussion}{11}
+\contentsline {section}{\numberline {3}Fault simulation}{5}
+\contentsline {subsection}{\numberline {3.1}Idea of fault simulation}{5}
+\contentsline {subsection}{\numberline {3.2}Special software requirements}{5}
+\contentsline {subsection}{\numberline {3.3}preparation to execute the fault simulation on the development kit}{5}
+\contentsline {subsection}{\numberline {3.4}process}{6}
+\contentsline {subsection}{\numberline {3.5}Implementation}{6}
+\contentsline {subsection}{\numberline {3.6}Problems}{6}
+\contentsline {subsection}{\numberline {3.7}Discussion}{7}
+\contentsline {section}{\numberline {4}Appendix - VHDL Code}{8}
+\contentsline {subsection}{\numberline {4.1}PR top level}{8}
