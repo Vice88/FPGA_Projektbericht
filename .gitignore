@@ -3,7 +3,7 @@
 *.bbl
 *.blg
 *.log
-*.pdf
+
 *.gz
 *.project
 *.texlipse
