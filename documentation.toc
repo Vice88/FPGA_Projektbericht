@@ -9,10 +9,10 @@
 \contentsline {section}{\numberline {3}Fault simulation}{5}
 \contentsline {subsection}{\numberline {3.1}Idea of fault simulation}{5}
 \contentsline {subsection}{\numberline {3.2}Special software requirements}{5}
-\contentsline {subsection}{\numberline {3.3}preparation to execute the fault simulation on the development kit}{5}
+\contentsline {subsection}{\numberline {3.3}preparation to execute the fault simulation on the development kit}{6}
 \contentsline {subsection}{\numberline {3.4}process}{6}
-\contentsline {subsection}{\numberline {3.5}Implementation}{6}
-\contentsline {subsection}{\numberline {3.6}Problems}{6}
+\contentsline {subsection}{\numberline {3.5}Implementation}{7}
+\contentsline {subsection}{\numberline {3.6}Problems}{7}
 \contentsline {subsection}{\numberline {3.7}Discussion}{7}
 \contentsline {section}{\numberline {4}Appendix - VHDL Code}{8}
 \contentsline {subsection}{\numberline {4.1}PR top level}{8}

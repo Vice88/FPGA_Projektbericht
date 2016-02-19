@@ -99,7 +99,14 @@ The field of partial reconfiguration is still a new one to researcher. It is not
 \section{Fault simulation}
 \subsection{Idea of fault simulation}
 The idea of fault simulation is to detect so called stuck-at faults with the fpga. Its purpose is, if a faulty pattern can be recognised or not. A special pattern is loaded to the ram of the fpga and processed by the hps.\vspace{1cm}
-A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells with test pattern to compare both. The output of both circuits is lead to a logical XOR gatter. If the output distinguishes each other the XOR gatter give a logical one, hence a fault. This output is safed in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.\textbf{diagram...} 
+A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells with test pattern to compare both. The output of both circuits is lead to a logical XOR gatter. If the output distinguishes each other the XOR gatter give a logical one, hence a fault. This output is safed in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.\textbf{diagram...} Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\ \textbf{lcell} \begin{itemize}
+	\item smallest logic cell
+	\item maximal four inputs
+	\item gatter are ordered in a logic cell
+	\item every lcell have a look-up table, which defines the output
+	\item the function of a particular  lcell can be changed by hand
+\end{itemize}
+The idea of the Maximum fanout free cones (MFFC) is to assign as many as possible gatter to one logic cell. The creattion of maximum fanout free cones is an algorithm to minimize the number of gatter in one logic cell. this algorithm is implemented in quartus by a proper work. the original circuit under test is compared to a modified circuit. The lut can be calculated for every locig cell in quartus. the idea of the fault injection test is an efficient way to detect faults in a fpga. the evaluation is done over the rs232 interface and a personal computer. the goal is a very fast way to detect those faults.
 
 \subsection{Special software requirements}
 In addition to the mentioned software in the beginning some special software is required:
