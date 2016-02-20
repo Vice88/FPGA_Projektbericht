@@ -5,24 +5,24 @@
 \usepackage[T1]{fontenc}
 %\usepackage{beramono}% monospaced font with bold variant
 
-\usepackage{listings}
-\lstdefinelanguage{VHDL}{
-  morekeywords={
-    library,use,all,entity,is,port,in,out,end,architecture,of,
-    begin,and
-  },
-  morecomment=[l]--
-}
-
-\usepackage{xcolor}
-\colorlet{keyword}{blue!100!black!80}
-\colorlet{comment}{green!90!black!90}
-\lstdefinestyle{vhdl}{
-  language     = VHDL,
-  basicstyle   = \ttfamily,
-  keywordstyle = \color{keyword}\bfseries,
-  commentstyle = \color{comment}
-}
+%\usepackage{listings}
+%\lstdefinelanguage{VHDL}{
+%  morekeywords={
+%    library,use,all,entity,is,port,in,out,end,architecture,of,
+%    begin,and
+%  },
+%  morecomment=[l]--
+%}
+%
+%\usepackage{xcolor}
+%\colorlet{keyword}{blue!100!black!80}
+%\colorlet{comment}{green!90!black!90}
+%\lstdefinestyle{vhdl}{
+%  language     = VHDL,
+%  basicstyle   = \ttfamily,
+%  keywordstyle = \color{keyword}\bfseries,
+%  commentstyle = \color{comment}
+%}
 
 
 \begin{document}
@@ -35,31 +35,42 @@
 \newpage
 
 \section{HW/SW prerequisite for this project}
-The Hard- and Software prerequisites do not differ for both projects, so here is a short summary of the used hard- and software.
+The Hard- and Software prerequisites are the same for both projects, so here is a short summary of the used hard- and software.
 \subsection{Hardware}
-The hardware used in this project were a "Terasic DE1-SoC Development Kit".  This development kit consists of the following core components: a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex A9 processor, also named Hard-Processor-System (HPS), different memories and interfaces (USB,JTAG,i2c). The communication interfaces are a onboard USB-Blaster II, USB 2.0 ports, UART, ethernet port and extended module for gpio pins.\\
+The hardware used in this project were a "Terasic DE1-SoC Development Kit".  This development kit consists of the following core components: a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex A9 processor, also named Hard-Processor-System (HPS), different memories and interfaces (USB,JTAG,i2c). The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART, Ethernet port and extended module for gpio pins.\\
 The fpga is the heart of the development kit and the mainly used component of the development kit board. Some facts about the fpga Cyclone V:\\
 \begin{itemize}
-	\item 85000 logic cells
+	\item 85000 logic cells on the board
 	\item 4450 kb embedded memory
 	\item access to an external 64 MB static random access memory (SRAM)
 	\item low energy consumption
 	\item standard clock frequency is 50 MHz
 \end{itemize}
-The Cyclone V is configured with a JTAG interface, where a bitstream is loaded to the board. This bitstream is lost once the energy is off. Also available is the option to program an in-system NOR flash memory, which safes the bitstream while power is taken off.\\ Another way to program the fpga is to use the HPS. This is done while the boot process with "U-Boot" or the "preloader", but it also works if the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, multiplexing of pins, configuration of the main memory and load the U-Boot.  The configuration of the main memory of the HPS and the AXI Bridges is important, because these have to grant the fpga access.\\ The \textbf{universal boot loader} initiates and tests hardware components. Also it downloads and executes application software. This bootloader is required to initiate the boot process of the unix-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables adress based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special adresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\ To work with an external C/C++ programm an operation system for the hps is needed. The chosen os is a linux system.
+The Cyclone V is configured with a JTAG interface, where a bit stream is loaded to the board. This bit stream is lost once the energy is off. Also available is the option to program an in-system NOR flash memory, which safes the bit stream while power is taken off.\\ Another way to program the fpga is to use the HPS. This is done while the boot process with "U-Boot" or the "preloader", but it also works if the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, multiplexing of pins, configuration of the main memory and load the U-Boot.  The configuration of the main memory of the HPS and the AXI Bridges is important, because these have to grant the fpga access.\\ The \textbf{universal boot loader} initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special addresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\ To work with an external C/C++ program an operation system for the hps is needed. The chosen OS is a linux system.
 
 
 \subsection{Software}
-The software used in this project were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is needed to generate VHDL- or Verilog programs which can be used by a FPGA. The software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration to safe time, therefore cost of developer by generating automatic connectionlogic of different components. The developed VHDL code from Quartus II software can be imported to QSYS to connect different components, e.g. on the DE-SoC1. QSYS has to initiate, configure and connect the HPS to the FPGA if they have to communication between each other.
+The software used in this project were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is needed to generate VHDL- or Verilog programs which can be used by a FPGA. The software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration to safe time, therefore cost of developer by generating automatic connection-logic of different components. The developed VHDL code from Quartus II software can be imported to QSYS to connect different components, e.g. on the DE-SoC1. QSYS has to initiate, configure and connect the HPS to the FPGA if they have to communication between each other.
 
 \section{Partial reconfiguration}
-\subsection{Motivation}
-The idea of reconfigurating a fpga while the rest of it is still running is highly desirable. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. \\Thanks to this partial reconfiguration the fpga can handle a new input while another part still executes its commands. 
-This reconfiguration is initialised by an external processor on the development kit (hps) and programs the desired locig cells of the fpga while the other part remains in its process. The intiation is done by an internal host which runs a C/C++ programm. This C/C++ programm is stored in the RAM (read access memory) of the development kit board.
+\subsection{The idea and the benefit of partial reconfiguration}
+The idea to re-configurate a fpga while the rest of it is still running is highly desirable. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. \\Thanks to this partial reconfiguration the fpga can handle a new input while another part still executes its commands. 
+This reconfiguration is initialised by an external processor on the development kit (hps) and programs the desired locig cells of the fpga while the other part remains in its process. The intiation is done by an internal host which runs a C/C++ programm. This C/C++ programm is stored in the RAM (read access memory) of the development kit board.\\
+Partial reconfiguration should be combined with the fault simulation on fpga. therefore a very efficient way to detect logic errors with the fpga is established.
 
-\subsection{Implementation}
-The idea of the project were to implement an internal host, which initialises the reconfiguration with a c/c++ program. To do so, the processor has to communicate with the fpga.\\
-The communication between HPS and FPGA, the main memory and in- and output interfaces is an important point.
+\subsection{Approach to integrate PR - Implementation}
+The approach for the partial reconfiguration was, to create two led pattern to check if the reconfiguration is done properly. One for the static and one for the dynamic region. therefore several files are nedded.
+\begin{enumerate}
+	\item create a simple led pattern for static region
+	\item second wrapper under freeze region
+	\item one more led pattern for dynamic region
+	\item determine LogicLock regions -> what is that?
+	\item check warnings
+	\item connect I/O signals with pins (QSYS)
+\end{enumerate}
+
+The idea of the project was to implement an internal host, which initializes the reconfiguration with a c/c++ program. To do so, the processor has to communicate with the fpga. \textbf{where is the internal host? how dows it work? who communicate with whom?}\\
+The communication between the hard processor system and  the fpga, the main memory and in- and output interfaces is an important point. \textbf{communication link between processor, fpga, interfaces...}
 There are different options for the communication between HPS and FPGA.
 \begin{enumerate}
 	\item Advanced extensible interface bus bridges (AXI)
@@ -165,5 +176,5 @@ absolute path to installed software. troubleshooting for installation of usb bla
 what can be changed, what is the point of work, what are the next steps. Which problems can be solved how? All in all i can say to work on a proper design it is very difficult. The communication link between RS232 and Baord work properly, but without the information on the Version of used software (quartus, qsys, operating system etc.) it is too difficult. Also the installation path should not be absolute. There were an error that the project was not compiled after changing the LUTs. Debugging and troubleshooting took too long to stay focused and motivated to this project. 
 
 
-\include{AppendixPR}
+% \include{AppendixPR}
 \end{document}
