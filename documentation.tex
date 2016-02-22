@@ -54,70 +54,85 @@ The software used in this project were Quartus II Version 14.1/15.0 and QSYS on 
 
 \section{Partial reconfiguration}
 \subsection{The idea and the benefit of partial reconfiguration}
-The idea to re-configurate a fpga while the rest of it is still running is highly desirable. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. \\Thanks to this partial reconfiguration the fpga can handle a new input while another part still executes its commands. 
-This reconfiguration is initialised by an external processor on the development kit (hps) and programs the desired locig cells of the fpga while the other part remains in its process. The intiation is done by an internal host which runs a C/C++ programm. This C/C++ programm is stored in the RAM (read access memory) of the development kit board.\\
-Partial reconfiguration should be combined with the fault simulation on fpga. therefore a very efficient way to detect logic errors with the fpga is established.
+The idea of partial reconfiguration is highly desirable for some special purposes. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. \\Thanks to this feature the fpga can handle a new input while another part still executes its commands.\\
+This reconfiguration is initialized by an external processor on the development kit (hps) and programs the desired locig cells of the fpga while the other part remains in its process. The initiation is done by an internal host which runs a C/C++ program. This C/C++ program is stored in the RAM (read access memory) of the development kit board.\\
+Partial reconfiguration could be combined with the fault simulation on fpga for a  efficient way to detect logic errors.
 
-\subsection{Approach to integrate PR - Implementation}
-The approach for the partial reconfiguration was, to create two led pattern to check if the reconfiguration is done properly. One for the static and one for the dynamic region. therefore several files are nedded.
+\subsection{Design flow and implementation of partial reconfiguration}
+The focus of the partial reconfiguration is rather on logic blocks than DSP, memories, PLL, transceivers and I/O blocks. Functions in the periphery like GPIO or I/O registers can not be partially reconfigured.\\ There have to be two different regions in the top level design, one static and one region for the partial reconfiguration. Two led pattern are loaded to this regions. One pattern, in the static region, highlights the leds to check if the fpga is still running while another led pattern is loaded to the dynamic or partial reconfiguration region which let us check if a part of the fpga is reconfigured. \\
+A wrapper region is generated to ensure that all of the PR personas have the same connection to the static region. This is done by creating dummy ports.\\
+For partial reconfiguration all non-global inputs of the pr regions must be freezed. Freezing means in this context to drive a '1' to the inputs which ensures there is no contention between current values and those after partial reconfiguration. Therefore a freeze region is created.\\The projects idea was a partial reconfiguration with an internal host, which initializes the reconfiguration with a c/c++ program. To do so, the processor has to communicate with the fpga and with the memory. The communication between the hard processor system and  the fpga, the main memory and in- and output interfaces is a crucial point.  The design flow used in this project was as follows:
 \begin{enumerate}
-	\item create a simple led pattern for static region
-	\item second wrapper under freeze region
-	\item one more led pattern for dynamic region
-	\item determine LogicLock regions -> what is that?
-	\item check warnings
-	\item connect I/O signals with pins (QSYS)
+	\item planning the system for partial reconfiguration
+	\item identify which blocks to be partially reconfigured $\rightarrow$ led pattern for the led on DE1-SoC board
+	\item code the design in Quartus II
+	\item develop the personas
+	\item generate static and pr region
+	\item assign partitions to logiclock regions
+	\item create necessary files to program fpga
+	\item program fpga 
 \end{enumerate}
+The FPGA development process is done by Quartus II and QSYS. Quartus II creates the FPGA components in VHDL, while QSYS connects different system components which communicate and access each other. This informations are required to generate the "preloader" which coordinates the boot process. The next step of booting is the "universal boot loader" which configures the fpga and load the "linux-kernel". The Avalon-MM-Interface is required to grant the fpga access to the main memory of the HPS.\\
+\textbf{Partial reconfiguration is not supported by the Cyclone V fpga} which yields to stop the project.
+%Two different led pattern, a wrapper and a freeze region were designed. The design partition were associated with the logiclock regions of the fpga
+%	\item connect I/O signals with pins (QSYS)
 
-The idea of the project was to implement an internal host, which initializes the reconfiguration with a c/c++ program. To do so, the processor has to communicate with the fpga. \textbf{where is the internal host? how dows it work? who communicate with whom?}\\
-The communication between the hard processor system and  the fpga, the main memory and in- and output interfaces is an important point. \textbf{communication link between processor, fpga, interfaces...}
-There are different options for the communication between HPS and FPGA.
-\begin{enumerate}
-	\item Advanced extensible interface bus bridges (AXI)
-	\begin{enumerate}
-		\item Lightweight HPS-to-FPGA bridge
-		\item HPS-to-FPGA bridge
-		\item FPGA-to-HPS bridge
-	\end{enumerate}
-	\item FPGA-to-SDRAM
-\end{enumerate}
-FPGA access the memory and load the bitstream safed in the sdram??
-\textbf{which option is used in our project? which one should be used?}\\
 
-The FPGA development process is done by Quartus II and QSYS. Quartus II creates the FPGA components in VHDL, while QSYS connects different system components which communicate and access each other. This informations are required to generate the "preloader" which coordinates the boot process. The next step of booting is the "universal boot loader" which configures the fpga and load the "linux-kernel". The Avalon-MM-Interface is required to grant the fpga access to the main memory of the HPS.
-\\ Project design flow, hierarchy etc, code citation.
-Which design blocks are necessary to program the fpga for partial reconfiguration. Wrapper, logic, etc. ...comment on created code.
+%There are different options for the communication between HPS and FPGA, which are mentioned here without a detailed description. 
+%\begin{enumerate}
+%	\item Advanced extensible interface bus bridges (AXI)
+%	\begin{enumerate}
+%		\item Lightweight HPS-to-FPGA bridge
+%		\item HPS-to-FPGA bridge
+%		\item FPGA-to-HPS bridge
+%	\end{enumerate}
+%	\item FPGA-to-SDRAM
+%\end{enumerate}
 
-\subsection{Problems}
-After working a couple of weeks on the field of partial reconfiguration the project has to be stopped. Following problems occured:
+%\\ Project design flow, hierarchy etc, code citation.
+%Which design blocks are necessary to program the fpga for partial reconfiguration. Wrapper, logic, etc. ...comment on created code.
+
+\subsection{Reason why the project was stopped}
+After working eight weeks in the field of partial reconfiguration the project has to be stopped. Following problems occurred:
 \begin{itemize}
 	\item  no permission to use partial reconfiguration feature in Quartus Software; so a new license was inquired.
 	\item the fpga Cyclone V does not support the feature of partial reconfiguration; this hardware problem could not be solved because a new special fpga was not affordable for the chair
 \end{itemize}
-The status quo at the time of cancellation is:
+The status quo at the time of cancellation was:
 \begin{itemize}
   \item literature survey
-  \item top level design
-  \item static region $\rightarrow$ ticker (still runing while reconfiguration)
-  \item pr region $\rightarrow$ two different LED pattern; persona A, persona B
-  \item wrapper design 
+  \item soft- and hardware prerequisites
+  \item project design flow
+  \item creating different revisions for partial reconfiguration in Quartus II
+  \item VHDL design
+	\begin{itemize}
+		\item top level
+		\item wrapper
+		\item freeze region
+		\item static region + personas
+		\item partial reconfiguration region + personas
+	\end{itemize}
+  \item pin assignments
+  \item file creation for programming the fpga (.pmsf, .msf, .sof, .rbf)
 \end{itemize}
 
-\subsection{Discussion}
-Partial reconfiguration can be used in time critical systems, like communication systems where a abrupt stop of a data flow is critical.
-The field of partial reconfiguration is still a new one to researcher. It is not integrated in industrial products yet, because if a special fpga is needed instead of an ASIC it is not very cost efficient. 
+%\subsection{Discussion}
+%Partial reconfiguration can be used in time critical systems, like communication systems where a abrupt stop of a data flow is critical. The field of partial reconfiguration is still a new topic to researcher. It is not integrated in industrial products yet, because if a special fpga is needed instead of an ASIC it is not very cost efficient. The absence of a proper fpga for partial reconfiguration forced the project to be stopped.
 
 \section{Fault simulation}
-\subsection{Idea of fault simulation}
-The idea of fault simulation is to detect so called stuck-at faults with the fpga. Its purpose is, if a faulty pattern can be recognised or not. A special pattern is loaded to the ram of the fpga and processed by the hps.\vspace{1cm}
-A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells with test pattern to compare both. The output of both circuits is lead to a logical XOR gatter. If the output distinguishes each other the XOR gatter give a logical one, hence a fault. This output is safed in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.\textbf{diagram...} Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\ \textbf{lcell} \begin{itemize}
-	\item smallest logic cell
-	\item maximal four inputs
-	\item gatter are ordered in a logic cell
-	\item every lcell have a look-up table, which defines the output
-	\item the function of a particular  lcell can be changed by hand
-\end{itemize}
-The idea of the Maximum fanout free cones (MFFC) is to assign as many as possible gatter to one logic cell. The creattion of maximum fanout free cones is an algorithm to minimize the number of gatter in one logic cell. this algorithm is implemented in quartus by a proper work. the original circuit under test is compared to a modified circuit. The lut can be calculated for every locig cell in quartus. the idea of the fault injection test is an efficient way to detect faults in a fpga. the evaluation is done over the rs232 interface and a personal computer. the goal is a very fast way to detect those faults.
+\subsection{Idea of fault simulations on fpga}
+The idea of fault simulation is to detect stuck-at faults with the fpga. A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells. The changed logic cells are loaded with test pattern to compare both. The output of both circuits is lead to a logical XOR gate. If the outputs of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise no fault is detected. This output is saved in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.
+%Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\
+%To detect faults some lcells are modified. 
+% \textbf{lcell}
+% \begin{itemize}
+%	\item smallest logic cell
+%	\item maximal four inputs
+%	\item gatter are ordered in a logic cell
+%	\item every lcell have a look-up table, which defines the output
+%	\item the function of a particular  lcell can be changed by hand
+%\end{itemize}
+The idea of the Maximum fanout free cones (MFFC), adopted from a former project,   is to assign as many as possible gates to one logic cell. The creation of maximum fanout free cones is an algorithm to minimize the number of gates in one logic cell. This algorithm is implemented in quartus by a former work. The original circuit under test is compared to a modified circuit. The look-up table (LUT) can be calculated for every locig cell in quartus. The idea of the fault injection test is an efficient way to detect faults in hardware. The evaluation is done over the rs232 interface and a personal computer. The goal is a very fast way to detect those faults.
 
 \subsection{Special software requirements}
 In addition to the mentioned software in the beginning some special software is required:
@@ -130,7 +145,7 @@ Also it seems to be intuitive to install USB driver, it was quite difficult to i
 	\item ...
 \end{enumerate}
 \subsection{preparation to execute the fault simulation on the development kit}
-After installing a C++ compiler and the USB driver for the blaster, you have to change the absolute paths to the desired programs in the C++ files.
+After setting up the software prerequisites you have to change the absolute paths  inside the C++ files to the desired programs. This list shows the process to execute the fault simulation on the fpga: 
 \begin{enumerate}
 	\item open 'FaultInjectionTester.qar' with Quartus II
 	\item compile this project
