@@ -3,6 +3,7 @@
 \documentclass{scrartcl}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
 %\usepackage{beramono}% monospaced font with bold variant
 
 %\usepackage{listings}
@@ -120,7 +121,7 @@ The status quo at the time of cancellation was:
 %Partial reconfiguration can be used in time critical systems, like communication systems where a abrupt stop of a data flow is critical. The field of partial reconfiguration is still a new topic to researcher. It is not integrated in industrial products yet, because if a special fpga is needed instead of an ASIC it is not very cost efficient. The absence of a proper fpga for partial reconfiguration forced the project to be stopped.
 
 \section{Fault simulation}
-\subsection{Idea of fault simulations on fpga}
+\subsection{Idea of fault simulations in hardware}
 The idea of fault simulation is to detect stuck-at faults with the fpga. A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells. The changed logic cells are loaded with test pattern to compare both. The output of both circuits is lead to a logical XOR gate. If the outputs of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise no fault is detected. This output is saved in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.
 %Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\
 %To detect faults some lcells are modified. 
@@ -186,10 +187,88 @@ pfade aendern, treiber installieren (-> nicht trivial !!), tcl, batch, c program
 what to do... what changed... 
 
 \subsection{Problems}
-absolute path to installed software. troubleshooting for installation of usb blaster driver. debugging former code fractions. error in design flow (compilation missing after changing luts). creating batch file to automate it. relative paths to automate. further improvements: design for a virtual machine, version control. 
-\subsection{Discussion}
-what can be changed, what is the point of work, what are the next steps. Which problems can be solved how? All in all i can say to work on a proper design it is very difficult. The communication link between RS232 and Baord work properly, but without the information on the Version of used software (quartus, qsys, operating system etc.) it is too difficult. Also the installation path should not be absolute. There were an error that the project was not compiled after changing the LUTs. Debugging and troubleshooting took too long to stay focused and motivated to this project. 
+Here are some problems which occur during seting-up or execution of the project.
+\begin{enumerate}
+	\item driver installation of USB blaster II and FTDI Chip for USB-Serial converter
+	\item error in design flow
+	\item common error while execution: inconsistent set and quartus could not be fond
+\end{enumerate}
+First of all i encountered the problem of driver installation. Although it seems to be trivial, if you encounter this problem: 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth, angle=0]{USB_blaster_driver_problem.png}
+	\caption{failed installation of usb blaster driver}
+	\label{fig1}
+\end{figure}
+you have to follow these steps to install the usb driver:
 
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{installationGuide.png}
+	\caption{steps to install the usb driver}
+	\label{fig1}
+\end{figure}
+Although it is an official driver from altera i was struggling with this problem a few days to find out, that windows 8.1 does not support this official driver. The solution is found on: \textbf{\textit{http://altera-guide.blogspot.de/2012/11/many-collage-students-find-ourselves.htmlcomment-form}}
 
+The solution for the inconsistent set would be to clear out 'db' and 'incremental db' in 'FaultInjectiontester restored' folder and recompile the quartus project. If a 'quartus' execution file could not be found, you have to check the paths entered in FPGACommunication.cpp and IRA.cpp and change them.
+The improvements and changes which were made:
+\begin{itemize}
+	\item changed absolute paths to relative paths
+	\item code debugging
+	\item error in design flow detected: re-compilation after changing the LUTs is missing
+	\item create a batch file to automate process
+\end{itemize}
+Further improvements for future work is to setup the program on a virtual machine to become independent of operating system and thus driver installation. Also a version control for this program would be great for future works and a nice structure of the project. In this project is no structure and it makes it very difficult to understand whats going on.\\
+There are a lot of problems which occured during the whole project, which make it impossible to do great in programing. The workstation for this project was my desktop pc and not my laptop. So this make it difficult for solution finding. I come to a point where i decided to redo the whole project, but this would expand the project time to an inappropriate scale. In the workload of 180h for 6 ECTS, a few are gone to the wasted time on partial reconfiguration, like literature survey, tutorial on Quartus II and QSYS software. Do the design flow, understand everything took over eight weeks and a workload of app. 80h. After changing to the project of fault simulation, the most of the time was to understand the former work of this project. This took a very long time, because it is so complicated and not documented and not trivial. Also there was a huge error in the design flow, which took very long to detect. Than there was the problems discussed earlier. Debugging and troubleshooting sadly become the main part of the project. 
+
+% path to installed software. troubleshooting for installation of usb blaster driver. debugging former code fractions. error in design flow (compilation missing after changing luts). creating batch file to automate it. relative paths to automate. further improvements: design for a virtual machine, version control. 
+%All in all i can say to work on a proper design is very difficult.
+%The communication link between RS232 and Board work properly, but without the information on the Version of used software (quartus, qsys, operating system etc.) it is too difficult.
+%Also the installation path should not be absolute.
+%%There were an error that the project was not compiled after changing the LUTs. 
+
+\section{Appendix}
+\subsection{ A - Problems and Errors}
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{FTDI_USB_SERIAL_CONVERTER_problem.png}
+	\caption{FTDI chip problem}
+	\label{fig}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{FTDI_USB_SERIAL_CONVERTER_problem2.png}
+	\caption{Driver install not successful}
+	\label{fig1}	
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{inconsistent_set.png}
+	\caption{inconsistent set}
+	\label{fig1}	
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{USB_blaster_problem.png}
+	\caption{AlteraUSBBlaster problem}
+	\label{fig1}	
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{USB_blaster_problem2.png}
+	\caption{AlteraUSBBlaster install not successfull}
+	\label{fig1}	
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{USB_serial_driver.png}
+	\caption{USB Serial Converterter could not be installed}
+	\label{fig1}	
+\end{figure}
 % \include{AppendixPR}
 \end{document}

@@ -1,0 +1,10 @@
+# this files would be ignored if pushed to the server
+*.aux
+*.bbl
+*.blg
+*.log
+
+*.gz
+*.project
+*.texlipse
+/tmp/

@@ -3,14 +3,14 @@
 \contentsline {subsection}{\numberline {1.2}Software}{3}
 \contentsline {section}{\numberline {2}Partial reconfiguration}{3}
 \contentsline {subsection}{\numberline {2.1}The idea and the benefit of partial reconfiguration}{3}
-\contentsline {subsection}{\numberline {2.2}Approach to integrate PR - Implementation}{3}
-\contentsline {subsection}{\numberline {2.3}Problems}{4}
-\contentsline {subsection}{\numberline {2.4}Discussion}{5}
+\contentsline {subsection}{\numberline {2.2}Design flow and implementation of partial reconfiguration}{3}
+\contentsline {subsection}{\numberline {2.3}Reason why the project was stopped}{4}
 \contentsline {section}{\numberline {3}Fault simulation}{5}
-\contentsline {subsection}{\numberline {3.1}Idea of fault simulation}{5}
+\contentsline {subsection}{\numberline {3.1}Idea of fault simulations in hardware}{5}
 \contentsline {subsection}{\numberline {3.2}Special software requirements}{6}
 \contentsline {subsection}{\numberline {3.3}preparation to execute the fault simulation on the development kit}{6}
-\contentsline {subsection}{\numberline {3.4}process}{7}
+\contentsline {subsection}{\numberline {3.4}process}{6}
 \contentsline {subsection}{\numberline {3.5}Implementation}{7}
 \contentsline {subsection}{\numberline {3.6}Problems}{7}
-\contentsline {subsection}{\numberline {3.7}Discussion}{8}
+\contentsline {section}{\numberline {4}Appendix}{9}
+\contentsline {subsection}{\numberline {4.1}A - Problems and Errors}{9}
