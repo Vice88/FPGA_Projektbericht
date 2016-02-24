@@ -35,10 +35,12 @@
 \tableofcontents
 \newpage
 
-\section{HW/SW prerequisite for this project}
-The Hard- and Software prerequisites are the same for both projects, so here is a short summary of the used hard- and software.
-\subsection{Hardware}
-The hardware used in this project were a "Terasic DE1-SoC Development Kit".  This development kit consists of the following core components: a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM and different interfaces (USB,JTAG,i2c). The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for gpio pins.\\
+\section{Software prerequisites}
+The software used in both projects were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is needed to generate VHDL- or Verilog programs which can be used by a fpga. The software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration to safe time by generating automatic connection-logic of different components. The developed VHDL code from Quartus II software can be imported to QSYS to connect different components, e.g. on the DE-SoC1. For an example QSYS has to initiate, configure and connect the HPS to the FPGA if they need to communicate.\\ USB driver for USB Blaster is needed to program the fpga with the computer.
+
+\section{Partial reconfiguration}
+\subsection{Prerequisites for the project of partial reconfiguration}
+The \textbf{hardware} used for this project was a development kit board from altera, namely "Terasic DE1-SoC Development Kit". This board consist of the following core components: a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM and different interfaces (USB,JTAG,i2c). The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for gpio pins.\\
 The fpga is the mainly used component of the development kit board. Here are some useful facts about the fpga Cyclone V:\\
 \begin{itemize}
 	\item 85000 logic cells on the board
@@ -48,12 +50,6 @@ The fpga is the mainly used component of the development kit board. Here are som
 	\item standard clock frequency is 50 MHz
 \end{itemize}
 The Cyclone V is configured with a JTAG interface, where a bit stream is loaded to the board. This bit stream is lost once the energy is off. Also available is the option to program an in-system NOR flash memory, which safes the bit stream while power is taken off.\\ Another way to program the fpga is to use the HPS. This is done while the boot process with "U-Boot" or the "preloader", but it also works if the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, multiplexing of pins, configuration of the main memory and load the U-Boot.  The configuration of the main memory of the HPS and the AXI Bridges is important, because these have to grant the fpga access.\\ The \textbf{universal boot loader} initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special addresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\ To work with an external C/C++ program an operation system for the hps is needed. The chosen OS is a linux system.
-
-
-\subsection{Software}
-The software used in this project were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is needed to generate VHDL- or Verilog programs which can be used by a FPGA. The software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration to safe time, therefore cost of developer by generating automatic connection-logic of different components. The developed VHDL code from Quartus II software can be imported to QSYS to connect different components, e.g. on the DE-SoC1. QSYS has to initiate, configure and connect the HPS to the FPGA if they have to communication between each other.
-
-\section{Partial reconfiguration}
 \subsection{The idea and the benefit of partial reconfiguration}
 The idea of partial reconfiguration is highly desirable for some special purposes. With this feature it is easier to change designs or improve the the functionality without stopping its working progress. Some applications need to change some logic while another part is not allowed to stop, e.g. the flow of data. Therefore this function is desirable in the field of communication systems and high-performance computing platforms. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take this. \\Thanks to this feature the fpga can handle a new input while another part still executes its commands.\\
 This reconfiguration is initialized by an external processor on the development kit (hps) and programs the desired locig cells of the fpga while the other part remains in its process. The initiation is done by an internal host which runs a C/C++ program. This C/C++ program is stored in the RAM (read access memory) of the development kit board.\\
@@ -74,7 +70,7 @@ For partial reconfiguration all non-global inputs of the pr regions must be free
 	\item program fpga 
 \end{enumerate}
 The FPGA development process is done by Quartus II and QSYS. Quartus II creates the FPGA components in VHDL, while QSYS connects different system components which communicate and access each other. This informations are required to generate the "preloader" which coordinates the boot process. The next step of booting is the "universal boot loader" which configures the fpga and load the "linux-kernel". The Avalon-MM-Interface is required to grant the fpga access to the main memory of the HPS.\\
-\textbf{Partial reconfiguration is not supported by the Cyclone V fpga} which yields to stop the project.
+
 %Two different led pattern, a wrapper and a freeze region were designed. The design partition were associated with the logiclock regions of the fpga
 %	\item connect I/O signals with pins (QSYS)
 
@@ -93,13 +89,13 @@ The FPGA development process is done by Quartus II and QSYS. Quartus II creates 
 %\\ Project design flow, hierarchy etc, code citation.
 %Which design blocks are necessary to program the fpga for partial reconfiguration. Wrapper, logic, etc. ...comment on created code.
 
-\subsection{Reason why the project was stopped}
-After working eight weeks in the field of partial reconfiguration the project has to be stopped. Following problems occurred:
+\subsection{Problems during the first project of partial reconfiguration}
+\textbf{Partial reconfiguration is not supported by the Cyclone V fpga}. Following problems occurred:
 \begin{itemize}
 	\item  no permission to use partial reconfiguration feature in Quartus Software; so a new license was inquired.
 	\item the fpga Cyclone V does not support the feature of partial reconfiguration; this hardware problem could not be solved because a new special fpga was not affordable for the chair
 \end{itemize}
-The status quo at the time of cancellation was:
+After working 8-10 weeks in the field of partial reconfiguration the project has to be stopped. At this time the status quo was:
 \begin{itemize}
   \item literature survey
   \item soft- and hardware prerequisites
@@ -121,6 +117,15 @@ The status quo at the time of cancellation was:
 %Partial reconfiguration can be used in time critical systems, like communication systems where a abrupt stop of a data flow is critical. The field of partial reconfiguration is still a new topic to researcher. It is not integrated in industrial products yet, because if a special fpga is needed instead of an ASIC it is not very cost efficient. The absence of a proper fpga for partial reconfiguration forced the project to be stopped.
 
 \section{Fault simulation}
+\subsection{Prerequisites for the project of fault simulation}
+\textbf{Hardware} used in this project was a former dev kit from altera with a fpga Cyclone IV.\\
+In addition to the former mentioned software there is some \textbf{special Software} required for this project:
+%In addition to the mentioned software in the beginning some special software is required:
+\begin{itemize}
+	\item C++ compiler e.g. MinGW $\rightarrow$ compile C++ file to *.exe file
+	\item USB-to-Serial driver $\rightarrow$ get a connection from dev kit to pc via RS232
+\end{itemize}
+Also a couple of files from a former work were provided. The former work was also a project by two students at the chair of computer architecture.
 \subsection{Idea of fault simulations in hardware}
 The idea of fault simulation is to detect stuck-at faults with the fpga. A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells. The changed logic cells are loaded with test pattern to compare both. The output of both circuits is lead to a logical XOR gate. If the outputs of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise no fault is detected. This output is saved in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.
 %Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\
@@ -135,16 +140,7 @@ The idea of fault simulation is to detect stuck-at faults with the fpga. A speci
 %\end{itemize}
 The idea of the Maximum fanout free cones (MFFC), adopted from a former project,   is to assign as many as possible gates to one logic cell. The creation of maximum fanout free cones is an algorithm to minimize the number of gates in one logic cell. This algorithm is implemented in quartus by a former work. The original circuit under test is compared to a modified circuit. The look-up table (LUT) can be calculated for every locig cell in quartus. The idea of the fault injection test is an efficient way to detect faults in hardware. The evaluation is done over the rs232 interface and a personal computer. The goal is a very fast way to detect those faults.
 
-\subsection{Special software requirements}
-In addition to the mentioned software in the beginning some special software is required:
-\begin{itemize}
-	\item C++ compiler e.g. MinGW
-	\item USB driver for USB Blaster
-\end{itemize}
-Also it seems to be intuitive to install USB driver, it was quite difficult to install under Win 8.1 becuase the delivered driver has no driver signature which is required for Win 8.1. To install a driver without signature you have to follow these steps to install it anyway.
-\begin{enumerate}
-	\item ...
-\end{enumerate}
+
 \subsection{preparation to execute the fault simulation on the development kit}
 After setting up the software prerequisites you have to change the absolute paths  inside the C++ files to the desired programs. This list shows the process to execute the fault simulation on the fpga: 
 \begin{enumerate}
@@ -187,13 +183,13 @@ pfade aendern, treiber installieren (-> nicht trivial !!), tcl, batch, c program
 what to do... what changed... 
 
 \subsection{Problems}
-Here are some problems which occur during seting-up or execution of the project.
+Here are the problems which occur during the project.
 \begin{enumerate}
 	\item driver installation of USB blaster II and FTDI Chip for USB-Serial converter
 	\item error in design flow
-	\item common error while execution: inconsistent set and quartus could not be fond
+	\item error while execution: inconsistent set and quartus could not be fond
 \end{enumerate}
-First of all i encountered the problem of driver installation. Although it seems to be trivial, if you encounter this problem: 
+Also it seems to be intuitive to install a USB driver, it was quite difficult to install under Win 8.1 because the delivered driver has no driver signature which is required for Win 8.1. To install a driver without signature you have to follow these steps to install it anyway. First of all i encountered the problem of driver installation. Although it seems to be trivial, if you encounter this problem: 
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.8\textwidth, angle=0]{USB_blaster_driver_problem.png}
@@ -208,9 +204,14 @@ you have to follow these steps to install the usb driver:
 	\caption{steps to install the usb driver}
 	\label{fig1}
 \end{figure}
-Although it is an official driver from altera i was struggling with this problem a few days to find out, that windows 8.1 does not support this official driver. The solution is found on: \textbf{\textit{http://altera-guide.blogspot.de/2012/11/many-collage-students-find-ourselves.htmlcomment-form}}
-
-The solution for the inconsistent set would be to clear out 'db' and 'incremental db' in 'FaultInjectiontester restored' folder and recompile the quartus project. If a 'quartus' execution file could not be found, you have to check the paths entered in FPGACommunication.cpp and IRA.cpp and change them.
+Although it is an official driver from altera i was struggling with this problem a few days to find out, that windows 8.1 does not support this official driver. The solution is found on: \textbf{\textit{http://altera-guide.blogspot.de/2012/11/many-collage-students-find-ourselves.htmlcomment-form}} \vspace{0.5cm}
+The solution for the inconsistent set error would be to clear out 'db' and 'incremental db' in 'FaultInjectiontester restored' folder and recompile the quartus project.\\
+If a 'quartus' execution file could not be found, you have to check the paths entered in FPGACommunication.cpp and IRA.cpp and change them. \vspace{1cm}
+A lot of problems occurred during the work on the project. These problems prevented that vhdl could be learned, which was the intend to do a project at the chair of computer architecture. The second project was nearly only a project in the programming language of C++ and no more hardware programming.
+The workstation for this project was my desktop pc and not my laptop. So this makes it difficult to share the problem among the other guys. The best way to enhance this project were to redo the whole project. The idea was to set up a whole new project which runs fine on my machine but then it would run fine on my work station but not in common. So there would be a good improvement, to set up a virtual machine with software which runs independent of the users operating system. There would be only one supported software version of Quartus II and QSYS, the driver could be set up once. This setup would have taken too much time in the workload of this project.
+This took a very long time, because it is so complicated and not documented and not trivial. Also there was a huge error in the design flow, which took very long to detect. 
+Than there was the problems discussed earlier. 
+Debugging and troubleshooting become the main part of the project.\\
 The improvements and changes which were made:
 \begin{itemize}
 	\item changed absolute paths to relative paths
@@ -219,7 +220,6 @@ The improvements and changes which were made:
 	\item create a batch file to automate process
 \end{itemize}
 Further improvements for future work is to setup the program on a virtual machine to become independent of operating system and thus driver installation. Also a version control for this program would be great for future works and a nice structure of the project. In this project is no structure and it makes it very difficult to understand whats going on.\\
-There are a lot of problems which occured during the whole project, which make it impossible to do great in programing. The workstation for this project was my desktop pc and not my laptop. So this make it difficult for solution finding. I come to a point where i decided to redo the whole project, but this would expand the project time to an inappropriate scale. In the workload of 180h for 6 ECTS, a few are gone to the wasted time on partial reconfiguration, like literature survey, tutorial on Quartus II and QSYS software. Do the design flow, understand everything took over eight weeks and a workload of app. 80h. After changing to the project of fault simulation, the most of the time was to understand the former work of this project. This took a very long time, because it is so complicated and not documented and not trivial. Also there was a huge error in the design flow, which took very long to detect. Than there was the problems discussed earlier. Debugging and troubleshooting sadly become the main part of the project. 
 
 % path to installed software. troubleshooting for installation of usb blaster driver. debugging former code fractions. error in design flow (compilation missing after changing luts). creating batch file to automate it. relative paths to automate. further improvements: design for a virtual machine, version control. 
 %All in all i can say to work on a proper design is very difficult.
