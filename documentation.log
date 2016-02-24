@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  24 FEB 2016 11:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  24 FEB 2016 17:02
 entering extended mode
 **documentation.tex
 (documentation.tex
@@ -131,26 +131,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-) (documentation.aux
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-
-LaTeX Warning: Label `fig1' multiply defined.
-
-)
+) (documentation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -163,7 +144,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
- (E:\WinProgram\MikTEX\tex\context\base\supp-pdf.mkii
+
+(E:\WinProgram\MikTEX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count89
 \scratchdimen=\dimen105
@@ -198,136 +180,129 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 {C:/Users/Vice88/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (10.48233pt too wide) in paragraph at lines 43--45
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
+
+(E:\WinProgram\MikTEX\tex\latex\base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+ [2]
+Overfull \hbox (10.48233pt too wide) in paragraph at lines 50--52
 \T1/cmr/m/n/10.95 Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM and dif-fer-ent in-t
 er-faces (USB,JTAG,i2c).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
-(E:\WinProgram\MikTEX\tex\latex\base\omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
- [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-[4] [5]
-Overfull \hbox (2.97928pt too wide) in paragraph at lines 153--154
-[]\T1/cmr/m/n/10.95 execute: \T1/cmr/m/it/10.95 g++ Fault-In-jec-tion-Tester.cp
-p PcF-P-GA-Com-mu-ni-ca-tion.cpp PcF-P-GA-Com-
- []
-
-[6] <USB_blaster_driver_problem.png, id=29, 474.27188pt x 352.31625pt>
+[5] [6] [7] [8]
+<USB_blaster_driver_problem.png, id=36, 474.27188pt x 352.31625pt>
 File: USB_blaster_driver_problem.png Graphic file (type png)
 
 <use USB_blaster_driver_problem.png>
-Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 195.
+Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 210.
 
 (pdftex.def)             Requested size: 334.60571pt x 248.57114pt.
 
-<installationGuide.png, id=31, 493.0922pt x 682.80093pt>
+<installationGuide.png, id=38, 493.0922pt x 682.80093pt>
 File: installationGuide.png Graphic file (type png)
 
 <use installationGuide.png>
-Package pdftex.def Info: installationGuide.png used on input line 203.
+Package pdftex.def Info: installationGuide.png used on input line 218.
 (pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
 
 
-LaTeX Warning: Float too large for page by 11.07558pt on input line 206.
+LaTeX Warning: Float too large for page by 11.07558pt on input line 221.
 
 
-Overfull \hbox (102.82011pt too wide) in paragraph at lines 207--216
+Overfull \hbox (102.82011pt too wide) in paragraph at lines 222--231
 \T1/cmr/m/n/10.95 on: \T1/cmr/bx/it/10.95 http://altera-guide.blogspot.de/2012/
 11/many-collage-students-find-ourselves.htmlcomment-
  []
 
-[7] [8 <./USB_blaster_driver_problem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+[9 <./USB_blaster_driver_problem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-<FTDI_USB_SERIAL_CONVERTER_problem.png, id=41, 680.5425pt x 180.675pt>
+[10] <FTDI_USB_SERIAL_CONVERTER_problem.png, id=47, 680.5425pt x 180.675pt>
 File: FTDI_USB_SERIAL_CONVERTER_problem.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem.png used on input li
-ne 234.
+ne 249.
 (pdftex.def)             Requested size: 418.25555pt x 111.0414pt.
 
-<FTDI_USB_SERIAL_CONVERTER_problem2.png, id=42, 814.54312pt x 177.66376pt>
+<FTDI_USB_SERIAL_CONVERTER_problem2.png, id=48, 814.54312pt x 177.66376pt>
 File: FTDI_USB_SERIAL_CONVERTER_problem2.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem2.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem2.png used on input l
-ine 241.
+ine 256.
 (pdftex.def)             Requested size: 418.25555pt x 91.2281pt.
 
-<inconsistent_set.png, id=43, 665.48625pt x 255.95625pt>
+<inconsistent_set.png, id=49, 665.48625pt x 255.95625pt>
 File: inconsistent_set.png Graphic file (type png)
 
 <use inconsistent_set.png>
-Package pdftex.def Info: inconsistent_set.png used on input line 248.
+Package pdftex.def Info: inconsistent_set.png used on input line 263.
 (pdftex.def)             Requested size: 418.25555pt x 160.87053pt.
 
-<USB_blaster_problem.png, id=44, 413.29407pt x 177.66376pt>
+<USB_blaster_problem.png, id=50, 413.29407pt x 177.66376pt>
 File: USB_blaster_problem.png Graphic file (type png)
 
 <use USB_blaster_problem.png>
-Package pdftex.def Info: USB_blaster_problem.png used on input line 255.
+Package pdftex.def Info: USB_blaster_problem.png used on input line 270.
 (pdftex.def)             Requested size: 418.25555pt x 179.79951pt.
 
-<USB_blaster_problem2.png, id=45, 800.9925pt x 173.14688pt>
+<USB_blaster_problem2.png, id=51, 800.9925pt x 173.14688pt>
 File: USB_blaster_problem2.png Graphic file (type png)
 
 <use USB_blaster_problem2.png>
-Package pdftex.def Info: USB_blaster_problem2.png used on input line 262.
+Package pdftex.def Info: USB_blaster_problem2.png used on input line 277.
 (pdftex.def)             Requested size: 418.25555pt x 90.41469pt.
 
-<USB_serial_driver.png, id=46, 712.91344pt x 670.00313pt>
+<USB_serial_driver.png, id=52, 712.91344pt x 670.00313pt>
 File: USB_serial_driver.png Graphic file (type png)
 
 <use USB_serial_driver.png>
-Package pdftex.def Info: USB_serial_driver.png used on input line 269.
+Package pdftex.def Info: USB_serial_driver.png used on input line 284.
 (pdftex.def)             Requested size: 418.25555pt x 393.07994pt.
- [9] [10 <./installationGuide.png>] [11 <./FTDI_USB_SERIAL_CONVERTER_problem.pn
-g> <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set.png>] [12 <./
-USB_blaster_problem.png> <./USB_blaster_problem2.png>] [13 <./USB_serial_driver
-.png>] (documentation.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ [11] [12 <./installationGuide.png>] [13 <./FTDI_USB_SERIAL_CONVERTER_problem.p
+ng> <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set.png>] [14 <.
+/USB_blaster_problem.png> <./USB_blaster_problem2.png>] [15 <./USB_serial_drive
+r.png>] (documentation.aux) ) 
 Here is how much of TeX's memory you used:
- 2951 strings out of 493673
- 45478 string characters out of 3146818
- 166098 words of memory out of 3000000
- 6289 multiletter control sequences out of 15000+200000
+ 2957 strings out of 493673
+ 45593 string characters out of 3146818
+ 164112 words of memory out of 3000000
+ 6295 multiletter control sequences out of 15000+200000
  14867 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,46p,1487b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecbi1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecti1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Vice88\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1095.pk> <C:\Users\Vice88\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1440.pk> <C:\Users\
-Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk>
- <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-csx1200.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecsx2074.pk><E:/WinProgram/MikTEX/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb>
-Output written on documentation.pdf (13 pages, 405736 bytes).
+ 41i,8n,46p,1568b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Vice88\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Vice88
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\U
+sers\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx109
+5.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+600\ecsx1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
+ppen\ec\dpi600\ecrm1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk><E:/WinProgram/MikTEX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb>
+Output written on documentation.pdf (15 pages, 402309 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
+ 408 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

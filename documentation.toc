@@ -1,15 +1,13 @@
 \contentsline {section}{\numberline {1}Software prerequisites}{2}
-\contentsline {section}{\numberline {2}Partial reconfiguration}{2}
-\contentsline {subsection}{\numberline {2.1}Prerequisites for the project of partial reconfiguration}{2}
-\contentsline {subsection}{\numberline {2.2}The idea and the benefit of partial reconfiguration}{3}
-\contentsline {subsection}{\numberline {2.3}Design flow and implementation of partial reconfiguration}{3}
-\contentsline {subsection}{\numberline {2.4}Problems during the first project of partial reconfiguration}{4}
-\contentsline {section}{\numberline {3}Fault simulation}{5}
-\contentsline {subsection}{\numberline {3.1}Prerequisites for the project of fault simulation}{5}
-\contentsline {subsection}{\numberline {3.2}Idea of fault simulations in hardware}{5}
-\contentsline {subsection}{\numberline {3.3}preparation to execute the fault simulation on the development kit}{6}
-\contentsline {subsection}{\numberline {3.4}process}{6}
-\contentsline {subsection}{\numberline {3.5}Implementation}{7}
-\contentsline {subsection}{\numberline {3.6}Problems}{7}
-\contentsline {section}{\numberline {4}Appendix}{9}
-\contentsline {subsection}{\numberline {4.1}A - Problems and Errors}{9}
+\contentsline {section}{\numberline {2}Partial reconfiguration}{3}
+\contentsline {subsection}{\numberline {2.1}Prerequisites}{3}
+\contentsline {subsection}{\numberline {2.2}The idea and the benefit}{4}
+\contentsline {subsection}{\numberline {2.3}Design flow and implementation}{4}
+\contentsline {subsection}{\numberline {2.4}Problems}{5}
+\contentsline {section}{\numberline {3}Fault simulation}{7}
+\contentsline {subsection}{\numberline {3.1}Prerequisites for the project of fault simulation}{7}
+\contentsline {subsection}{\numberline {3.2}Idea of fault simulations in hardware}{7}
+\contentsline {subsection}{\numberline {3.3}preparation and process to execute the fault simulation on the development kit}{7}
+\contentsline {subsection}{\numberline {3.4}Implementation}{8}
+\contentsline {subsection}{\numberline {3.5}Problems}{9}
+\contentsline {section}{\numberline {4}Appendix}{11}
