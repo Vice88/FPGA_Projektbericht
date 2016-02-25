@@ -4,10 +4,11 @@
 \contentsline {subsection}{\numberline {2.2}The idea and the benefit}{4}
 \contentsline {subsection}{\numberline {2.3}Design flow and implementation}{4}
 \contentsline {subsection}{\numberline {2.4}Problems}{5}
+\contentsline {subsection}{\numberline {2.5}Discussion/Conclusion}{6}
 \contentsline {section}{\numberline {3}Fault simulation}{7}
 \contentsline {subsection}{\numberline {3.1}Prerequisites}{7}
 \contentsline {subsection}{\numberline {3.2}Idea and benefit}{7}
 \contentsline {subsection}{\numberline {3.3}Preparation and process to execute the fault simulation}{7}
-\contentsline {subsection}{\numberline {3.4}Implementation}{8}
-\contentsline {subsection}{\numberline {3.5}Problems and its solution}{9}
-\contentsline {section}{\numberline {4}Appendix}{11}
+\contentsline {subsection}{\numberline {3.4}Implementation and improvement}{8}
+\contentsline {subsection}{\numberline {3.5}Problems and troubleshooting}{9}
+\contentsline {subsection}{\numberline {3.6}Discussion and future work}{10}
