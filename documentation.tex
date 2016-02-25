@@ -43,19 +43,22 @@ The following revisions and version of the software is used:
 	\item Quartus II (Version 14.1/15.0)
 	\item QSYS
 	\item Altera USB Blaster driver
+	\item portable os for the dev kit (partial reconfiguration)
+	\item usb-to-serial converter driver (fault simulation)
 \end{itemize}
 \newpage
 \section{Partial reconfiguration}
 \subsection{Prerequisites}
-The \textbf{hardware} used for this project was a development kit board from altera, namely "Terasic DE1-SoC Development Kit". This board consist of the following core components: a FPGA, named Altera Cyclone V FPGA (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM and different interfaces (USB,JTAG,i2c). The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for gpio pins.\\
-The fpga is the mainly used component of the development kit board. Here are some useful facts about the fpga Cyclone V:\\
+The hardware used in this project was a development kit board from altera, namely "Terasic DE1-SoC Development Kit". This board consists of the following core components: an FPGA, named Altera Cyclone V (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM memory and different interfaces like USB,JTAG and i2c.\\ The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for GPIO (general purpose input/output) pins.\\
+The FPGA is the mainly used component of the development kit board and therefore here are some useful facts about it (Cyclone V):\\
 \begin{itemize}
 	\item 85000 logic cells on the board
 	\item 4450 kb embedded memory
 	\item access to an external 64 MB static random access memory (SRAM)
 	\item low energy consumption
 \end{itemize}
-The Cyclone V is configured through the USB Blaster interface, where a bit stream is loaded to the memory of the board. This bit stream is lost once the energy is off. Alternatively an in-system NOR flash memory, which safes the bit stream while power is taken off, can be loaded with this bit stream.\\ Another way to program the fpga is to use the hard processor system (hps). This is done either while the boot process with "U-Boot" or the "preloader" or after the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the fpga access.\\ The \textbf{universal boot loader} initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special addresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\ To work with an external C/C++ program an operation system for the hps is needed. The chosen OS is a linux system.
+The Cyclone V is configured through the USB Blaster interface, where a bit stream is loaded to the memory of the board. This bit stream is lost once the energy is off. Alternatively an in-system NOR flash memory, which safes the bit stream while power is taken off, can be loaded with this bit stream.\\ Another way to program the fpga is to use the hard processor system (hps). This is done either while the boot process with "U-Boot" or the "preloader" or after the operating system is fully booted.\\ The \textbf{preloader} initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the fpga access.\\ The \textbf{universal boot loader} initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ The \textbf{Avalon-Memory-Mapped-Interface} enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection. The master put a request to the slave, which read or write special addresses of the memory. This interface is required to get access from the FPGA to the main memory of the HPS.\\
+To start a C++ program on the board an operation system for the hps is needed. The used operating system was a small sized portable linux system wihch was loaded to an sd card and started from there. 
 \subsection{The idea and the benefit}
 The concept of partial reconfiguration is highly desirable for some special purposes. With this feature it would be easier to change partially designs or improve the functionality of a fpga without interrupting its work progress. Special applications need to change some logic on a fpga while another part of the fpga is not allowed to stop. For example the flow of data should not be stopped while another part is changing something. Therefore this concept is desirable in the field of communication systems. A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and of course the cost. The tasks another fpga has handled before can now be handled by the same fpga, only another part of the logic cells take it. \\Thanks to this feature the fpga can handle a new input while another part still executes its commands.\\
 This reconfiguration is either initialized by an external host or an internal one. With the internal host, a processor on the development kit (hps)  initializes the process and starts to program the desired locig cells of the fpga while the other part remains in its process. This initiation is done by an internal host which runs a C/C++ program. This C/C++ program is stored in the RAM (read access memory) of the development kit board.\\
@@ -131,16 +134,16 @@ After working 8-10 weeks on this topic the project has to be stopped due to the 
 Researching on this topic of partial reconfiguration it worth it. Partial reconfiguration can be used in time critical systems, like communication systems, where an abrupt stop of a data flow is critical. The field of partial reconfiguration is still a new topic for researcher and yet it is not integrated in industrial products. The main disadvantage is the cost of a special fpga instead of using an cheaper ASIC and a lot more time must be spent on validation.
 \newpage
 \section{Fault simulation}
-\subsection{Prerequisites for the project of fault simulation}
-The \textbf{hardware} used in this part of the project was a former dev kit from altera with a fpga Cyclone IV.\\
-In addition to the software mentioned in section 1, there is some \textbf{special software} required for this part of the project:
+\subsection{Prerequisites}
+The hardware used in this part of the project was a former dev kit from altera with a fpga Cyclone IV.\\
+In addition to the software mentioned in section 1, there is some special software required for this part of the project:
 %In addition to the mentioned software in the beginning some special software is required:
 \begin{itemize}
 	\item C++ compiler e.g. MinGW $\rightarrow$ compile C++ file to *.exe file
 	\item USB-to-Serial driver $\rightarrow$ get a connection for communication purpose from dev kit to pc via RS232
 \end{itemize}
 Also a couple of files from a former project of two students were provided.
-\subsection{Idea of fault simulations in hardware}
+\subsection{Idea and benefit}
 The idea of fault simulation is to detect stuck-at faults with the fpga. A special test pattern is loaded to the ram of the fpga. This is done by the communication from pc to the fpga via usb blaster. The circuit under test is realized by one circuit without fault pattern and one with changed lcells. The changed logic cells are loaded with test pattern to compare both. The output of both circuits is lead to a logical XOR gate. If the outputs of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise no fault is detected. This output is saved in a fifo and then transmitted to the pc for documentation purposes via the serial interface RS232.
 %Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\
 %To detect faults some lcells are modified. 
@@ -155,7 +158,7 @@ The idea of fault simulation is to detect stuck-at faults with the fpga. A speci
 The idea of the Maximum fanout free cones (MFFC), adopted from a former project,   is to assign as many as possible gates to one logic cell. The creation of maximum fanout free cones is an algorithm to minimize the number of gates in one logic cell. This algorithm is implemented in quartus by a former work. The original circuit under test is compared to a modified circuit. The look-up table (LUT) can be calculated for every locig cell in quartus. The idea of the fault injection test is an efficient way to detect faults in hardware. The evaluation is done over the rs232 interface and a personal computer. The goal is a very fast way to detect those faults.
 
 
-\subsection{preparation and process to execute the fault simulation on the development kit}
+\subsection{Preparation and process to execute the fault simulation}
 After setting up the software prerequisites you have to change the absolute paths  inside the C++ files to the desired programs. This list shows the process to execute the fault simulation on the fpga: 
 \begin{enumerate}
 	\item compile quartus project
@@ -196,8 +199,17 @@ Otherwise following common errors can occur while executing:
 %\end{enumerate}
 
 \subsection{Implementation}
-First of all the execution of the c compiler by hand was enhanced. A batch file was created which can be executed without wondering which command has to follow which on which workspace. This was the first step to set up the project for everyone desire. The second step was to change absolute paths to relative paths, which also makes the project better for other working machines. Then a huge error was detected in the design flow. This shows that the previous work was not fully completed if nobody could find this fault before. This makes it difficult to work proper with this project.  A bunch of weeks was wasted on debugging and struggling with several software installation problems to run this project. Which create the idea of redo the whole project and setting it up to an independent state, so that everybody can use it without special requirements. This idea is based on a virtual machine with version control. Also only the really needed files were imported so the project structure is still remarkable, recognizable. This short instruction should be good start for future works on this project.
-\subsection{Problems}
+%First of all the execution of the c compiler by hand was enhanced.
+To enhance the existing project a batch file was created which automates the process of generating the executable file from the cpp files.
+This makes it easier in a more convenient way to set up the project and make it ready for execution. 
+Another step in the working progress was to change absolute paths to relative paths, so it can be used by everyone without checking the cpp program files.
+Then an error was detected in the design flow which leads to false results. 
+This errors cost very much time to find and it must be figured on finding other errors in the design flow. This shows that the previous work was not fully completed and debugged. It takes a lot of time to debug the former code. 
+A bunch of weeks was invested on debugging and struggling with several software installation problems to execute the project.
+This leads to the idea of redoing the whole project and setting it up to an independent machine like a virtual machine with a version control of the project.
+This would ensure that everybody can use it without special requirements.
+A version control would be a good start to get a nice structure of the project workspace.
+\subsection{Problems and its solution}
 Debugging and to solve problems on installation and design flows become the main part of the project work. Here are the problems which occur during the project.
 \begin{enumerate}
 	\item driver installation of USB blaster II and FTDI Chip for USB-Serial converter

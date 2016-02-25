@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  24 FEB 2016 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  25 FEB 2016 13:55
 entering extended mode
 **documentation.tex
 (documentation.tex
@@ -188,18 +188,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
  [2]
-Overfull \hbox (10.48233pt too wide) in paragraph at lines 50--52
-\T1/cmr/m/n/10.95 Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM and dif-fer-ent in-t
-er-faces (USB,JTAG,i2c).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
@@ -208,7 +202,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 File: USB_blaster_driver_problem.png Graphic file (type png)
 
 <use USB_blaster_driver_problem.png>
-Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 210.
+Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 222.
 
 (pdftex.def)             Requested size: 334.60571pt x 248.57114pt.
 
@@ -216,20 +210,20 @@ Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 210.
 File: installationGuide.png Graphic file (type png)
 
 <use installationGuide.png>
-Package pdftex.def Info: installationGuide.png used on input line 218.
+Package pdftex.def Info: installationGuide.png used on input line 230.
 (pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
 
 
-LaTeX Warning: Float too large for page by 11.07558pt on input line 221.
+LaTeX Warning: Float too large for page by 11.07558pt on input line 233.
 
 
-Overfull \hbox (102.82011pt too wide) in paragraph at lines 222--231
+Overfull \hbox (102.82011pt too wide) in paragraph at lines 234--243
 \T1/cmr/m/n/10.95 on: \T1/cmr/bx/it/10.95 http://altera-guide.blogspot.de/2012/
 11/many-collage-students-find-ourselves.htmlcomment-
  []
 
 [9 <./USB_blaster_driver_problem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
@@ -238,7 +232,7 @@ File: FTDI_USB_SERIAL_CONVERTER_problem.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem.png used on input li
-ne 249.
+ne 261.
 (pdftex.def)             Requested size: 418.25555pt x 111.0414pt.
 
 <FTDI_USB_SERIAL_CONVERTER_problem2.png, id=48, 814.54312pt x 177.66376pt>
@@ -246,35 +240,35 @@ File: FTDI_USB_SERIAL_CONVERTER_problem2.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem2.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem2.png used on input l
-ine 256.
+ine 268.
 (pdftex.def)             Requested size: 418.25555pt x 91.2281pt.
 
 <inconsistent_set.png, id=49, 665.48625pt x 255.95625pt>
 File: inconsistent_set.png Graphic file (type png)
 
 <use inconsistent_set.png>
-Package pdftex.def Info: inconsistent_set.png used on input line 263.
+Package pdftex.def Info: inconsistent_set.png used on input line 275.
 (pdftex.def)             Requested size: 418.25555pt x 160.87053pt.
 
 <USB_blaster_problem.png, id=50, 413.29407pt x 177.66376pt>
 File: USB_blaster_problem.png Graphic file (type png)
 
 <use USB_blaster_problem.png>
-Package pdftex.def Info: USB_blaster_problem.png used on input line 270.
+Package pdftex.def Info: USB_blaster_problem.png used on input line 282.
 (pdftex.def)             Requested size: 418.25555pt x 179.79951pt.
 
 <USB_blaster_problem2.png, id=51, 800.9925pt x 173.14688pt>
 File: USB_blaster_problem2.png Graphic file (type png)
 
 <use USB_blaster_problem2.png>
-Package pdftex.def Info: USB_blaster_problem2.png used on input line 277.
+Package pdftex.def Info: USB_blaster_problem2.png used on input line 289.
 (pdftex.def)             Requested size: 418.25555pt x 90.41469pt.
 
 <USB_serial_driver.png, id=52, 712.91344pt x 670.00313pt>
 File: USB_serial_driver.png Graphic file (type png)
 
 <use USB_serial_driver.png>
-Package pdftex.def Info: USB_serial_driver.png used on input line 284.
+Package pdftex.def Info: USB_serial_driver.png used on input line 296.
 (pdftex.def)             Requested size: 418.25555pt x 393.07994pt.
  [11] [12 <./installationGuide.png>] [13 <./FTDI_USB_SERIAL_CONVERTER_problem.p
 ng> <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set.png>] [14 <.
@@ -287,7 +281,7 @@ Here is how much of TeX's memory you used:
  6295 multiletter control sequences out of 15000+200000
  14867 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,8n,46p,1568b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,46p,1453b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\
 2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Vice88\AppData\Lo
@@ -300,9 +294,9 @@ ppen\ec\dpi600\ecrm1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\
 ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk><E:/WinProgram/MikTEX/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on documentation.pdf (15 pages, 402309 bytes).
+Output written on documentation.pdf (15 pages, 401382 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
+ 405 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

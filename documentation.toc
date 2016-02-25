@@ -5,9 +5,9 @@
 \contentsline {subsection}{\numberline {2.3}Design flow and implementation}{4}
 \contentsline {subsection}{\numberline {2.4}Problems}{5}
 \contentsline {section}{\numberline {3}Fault simulation}{7}
-\contentsline {subsection}{\numberline {3.1}Prerequisites for the project of fault simulation}{7}
-\contentsline {subsection}{\numberline {3.2}Idea of fault simulations in hardware}{7}
-\contentsline {subsection}{\numberline {3.3}preparation and process to execute the fault simulation on the development kit}{7}
+\contentsline {subsection}{\numberline {3.1}Prerequisites}{7}
+\contentsline {subsection}{\numberline {3.2}Idea and benefit}{7}
+\contentsline {subsection}{\numberline {3.3}Preparation and process to execute the fault simulation}{7}
 \contentsline {subsection}{\numberline {3.4}Implementation}{8}
-\contentsline {subsection}{\numberline {3.5}Problems}{9}
+\contentsline {subsection}{\numberline {3.5}Problems and its solution}{9}
 \contentsline {section}{\numberline {4}Appendix}{11}
