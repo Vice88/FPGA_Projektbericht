@@ -209,17 +209,10 @@ After setting up the software prerequisites you can try to run the project. This
 If it all worked well, the pc programs and tests the fpga. The communication link is via the RS232 interface, for which the usb to serial driver is necessary.\\
 Otherwise following common errors can occur while executing:
 \begin{itemize}
-	\item "Can not find quartus\textunderscore cdb" 
-	\begin{itemize}
-		\item change the HDD constant in FPGACommunication/PcFPGACommunication.cpp and FaultConfiguration/IRA.cpp to the drive where your quartus is installed	
-	\end{itemize}
-	\item "Inconsistent set or reset compile started variable", cf. [\textbf{figureXYZ}]
-	\begin{itemize}
-		\item clear out the "db" and "incremental\textunderscore db" folder in "FaultInjectionTester\textunderscore restored" folder
-		\item recompile Quartus project
-		\item execute IRA.exe once more
-	\end{itemize}	
+	\item "Can not find quartus\textunderscore cdb"
+	\item "Inconsistent set or reset compile started variable"
 \end{itemize}
+For a solution see \ref{problemandtroubleshoot}.
 
 %explain the complete process:
 %\begin{enumerate}
@@ -239,116 +232,120 @@ Then an error was detected in the design flow which leads to false results.
 This error cost very much time to find and it must be figured on finding other errors in the design flow. 
 This shows that the previous work was not final and that there could be more errors.
 %It takes a lot of time to debug the former code. 
-A bunch of weeks was invested on debugging and struggling with several software installation problems to run the projects files on the FPGA.
+A bunch of weeks was invested on debugging and struggling with several software installation problems to run the projects files on the FPGA.\\
+The improvements and changes which were made in an overview:
+\begin{itemize}
+	\item changed absolute paths to relative paths
+	\item code debugging
+	\item clear faults in design flow 
+	\item create a batch file to automate process
+\end{itemize}
 
 
-\subsection{Problems and troubleshooting}
+\subsection{Problems and troubleshooting} \label{problemandtroubleshoot}
 Debugging and troubleshooting several errors became the main part of this project. Here are the problems mentioned which occurred during the project.
 \begin{enumerate}
-	\item driver installation of USB Blaster II
-	\item driver installation of FTDI Chip for USB-Serial converter
-	\item error in the design flow
-	\item errors while execution
-	\begin{itemize}
-		\item "inconsistant set or reset of compile started variable" [ - troubleshooting takes a long time. This is not reported in altera forum nor the handbook. ]
-		\item "quartus\textunderscore pgm could not be found" - [insert SCREENSHOT]
-	\end{itemize}
+	\item \label{p1} driver installation of USB Blaster II
+	\item \label{p2} driver installation of FTDI Chip for USB-Serial converter
+	\item \label{p3} error in the design flow
+	\item \label{p4} errors while execution
+	\begin{enumerate}
+		\item \label{p4.1}"inconsistant set or reset of compile started variable"
+		\item \label{p4.2} "quartus\textunderscore pgm could not be found" - [insert SCREENSHOT]
+	\end{enumerate}
 \end{enumerate}
 
-\begin{enumerate}
-	\item driver installation of USB Blaster II
-\end{enumerate}
-Also it seems to be intuitive to install a USB driver, it was quite difficult to install in Win 8.1 x64 pro. Although it is an official driver from Altera Windows 8.1 x64 pro does not support this driver because it has no driver signature which is required.  First of all the following problem was encountered : 
-\begin{figure}[ht]
+%\begin{enumerate}
+%	\item driver installation of USB Blaster II
+%\end{enumerate}
+\ref{p1} Also it seems to be intuitive to install a USB driver, it was quite difficult to install in Windows 8.1 x64 pro. Although it is an official driver from Altera Windows 8.1 x64 pro does not support this driver because it has no driver signature. First of all the following problem was encountered : 
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=0.8\textwidth, angle=0]{USB_blaster_driver_problem.png}
 	\caption{failed installation of usb blaster driver}
 	\label{usbblasterproblem}
 \end{figure}
- The solution to this problem was found on: \textbf{\textit{http://altera-guide.blogspot.de/2012/11/many-collage-students-find-ourselves.htmlcomment-form}}
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=1\textwidth, angle=0]{installationGuide.png}
-	\caption{steps to install the usb driver}
-	\label{installguide}
-\end{figure}
-After installing the driver, another problem was detected while starting the driver:
-\begin{figure}[ht]
-	\centering
-  \includegraphics[width=1\textwidth, angle=0]{USB_blaster_problem.png}
-	\caption{AlteraUSBBlaster problem}
-	\label{usbblaster1}	
-\end{figure}
-The attempt to install windows standard driver results in the following error:
-\begin{figure}[ht]
+Neither the installation of the driver on the system cd nor the newest driver from alteras homepage could solve this problem. The attempt of windows to install this driver ended in the error in fig. \ref{usbblaster2}.
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{USB_blaster_problem2.png}
 	\caption{AlteraUSBBlaster install not successfull}
 	\label{usbblaster2}	
 \end{figure}
-Also there were this error:
-\begin{enumerate}
-	\item driver installation of FTDI chip
-\end{enumerate}
 
-\begin{figure}[ht]
+After searching for a while in alteras forum and the internet to this problem, the solution was found on: \textbf{\textit{http://altera-guide.blogspot.de/2012/11/many-collage-students-find-ourselves.htmlcomment-form}}\\
+Figure \ref{installguide} shows the screenshot from the blog entry to solve this problem.\\
+
+After successfully installing the driver, another problem may occur while starting the driver, see fig.\ref{usbblaster1}:
+\begin{figure}[!ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{USB_blaster_problem.png}
+	\caption{AlteraUSBBlaster problem}
+	\label{usbblaster1}	
+\end{figure}
+It seems to be correlated to the driver installed but that is not exactly validated .
+
+\ref{p2} If the USB Blaster driver was successfully installed, there came another problem concerning the usb to serial conversion for the communication link between pc and dev kit. The driver could not be installed and hence it could not be started see Fig. \ref{usb_serial_problem} and \ref{ftdi_problem1}
+
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{USB_serial_driver.png}
 	\caption{USB Serial Converterter could not be installed}
 	\label{usb_serial_problem}	
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{FTDI_USB_SERIAL_CONVERTER_problem.png}
 	\caption{FTDI chip problem}
 	\label{ftdi_problem1}
 \end{figure}
+If you try to install the driver with the standard windows application you run into this problem, see Fig. \ref{ftdi_problem2}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{FTDI_USB_SERIAL_CONVERTER_problem2.png}
 	\caption{Driver install not successful}
 	\label{ftdi_problem2}	
 \end{figure}
-
-\begin{enumerate}
-	\item error in the design flow
-\end{enumerate}
-No compilation after changing LUTs of circuit under test.
-
-\begin{enumerate}
-	\item error while execution - inconsistent set...
-\end{enumerate}
-
-\begin{figure}[ht]
+ In the end the driver for the FTDI Chip was searched in the internet and installed. 
+\ref{p3}
+There was an error in the design flow of the former work. It was realised that there was no compilation after changing LUTs of circuit under test.\\
+If all the troubleshooting about the installation of different drivers were made another error was detected while executing the project.\\
+\ref{p4.1} The execution error occuring while execution was:
+\begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{inconsistent_set.png}
 	\caption{inconsistent set}
 	\label{inconsistentset}	
 \end{figure}
+To solve this, you have to follow this:
+\begin{enumerate}
+	 		\item clear out the "db" and "incremental\textunderscore db" folder in "FaultInjectionTester\textunderscore restored" folder
+		\item recompile Quartus project
+		\item execute IRA.exe once more
+\end{enumerate}
 
+\ref{p4.2}
+If an error message appears which states that a quartus\textunderscore pgm or cdb or whatever could not be found, you have to check the path of your quartus installation.
+
+\newpage
 \subsection{Discussion and future work}
-A lot of problems occurred during this work. These problems prevented that vhdl could be learned, which was the intend to do a project at the chair of computer architecture. The second project was nearly only a project in the programming language of C++ and no more hardware programming.
-The workstation for this project was my desktop pc and not my laptop, so this makes it difficult to share the problem among the other guys. The best way to enhance this project were to redo the whole project. The idea was to set up a whole new project which runs fine on my machine but then it would run fine on my work station but not in common. So there would be a good improvement, to set up a virtual machine with software which runs independent of the users operating system. There would be only one supported software version of Quartus II and QSYS, the driver could be set up once. This setup would have taken too much time in the workload of this project.
-This took a very long time, because it is so complicated and not documented and not trivial. Also there was a huge error in the design flow, which took very long to detect. 
-Than there was the problems discussed earlier. 
-Debugging and troubleshooting become the main part of the project.\\
-The improvements and changes which were made:
-\begin{itemize}
-	\item changed absolute paths to relative paths
-	\item code debugging
-	\item error in design flow detected: re-compilation after changing the LUTs is missing
-	\item create a batch file to automate process
-\end{itemize}
-Further improvements for future work is to setup the program on a virtual machine to become independent of operating system and thus driver installation. Also a version control for this program would be great for future works and a nice structure of the project. In this project is no structure and it makes it very difficult to understand whats going on.\\This leads to the idea of redoing the whole project and setting it up to an independent machine like a virtual machine with a version control of the project.
-This would ensure that everybody can use it without special requirements.
-A version control would be a good start to get a nice structure of the project workspace.\\
+Debugging and troubleshooting become the main part of the project. A lot of problems occurred during this work. These problems prevented a learning process in vhdl, which was the intend to do a project at the chair of computer architecture. The second part of the project was a project in the programming language of C++ and hence none of hardware programming.\\
+The workstation for this project was a desktop pc and not a  laptop, which makes it difficult to share the problems like driver issues with the other guys. \\
+The best way to enhance this project were to set up the whole project on a virtual machine. So there could not occur any software issues and the project can be run independently of any operating system. There should be only one supported software version of Quartus II and QSYS and also a version control feature for the project. The version control is needed if a group should work with this project.
+This setup would have taken too much time in the workload of this project but it would be a nice part for future work.
+\\
 
 % path to installed software. troubleshooting for installation of usb blaster driver. debugging former code fractions. error in design flow (compilation missing after changing luts). creating batch file to automate it. relative paths to automate. further improvements: design for a virtual machine, version control. 
 %All in all i can say to work on a proper design is very difficult.
 %The communication link between RS232 and Board work properly, but without the information on the Version of used software (quartus, qsys, operating system etc.) it is too difficult.
 %Also the installation path should not be absolute.
 %%There were an error that the project was not compiled after changing the LUTs. 
-
+\begin{figure}[!ht]
+	\centering
+  \includegraphics[width=1\textwidth, angle=0]{installationGuide.png}
+	\caption{steps to install the usb driver}
+	\label{installguide}
+\end{figure}
 \end{document}

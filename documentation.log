@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  25 FEB 2016 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  26 FEB 2016 12:45
 entering extended mode
 **documentation.tex
 (documentation.tex
@@ -192,19 +192,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
  []
 
-[3] [4] [5] [6] [7]
-Overfull \hbox (17.03572pt too wide) in paragraph at lines 214--215
-[]\T1/cmr/m/n/10.95 change the HDD con-stant in FP-GA-Com-mu-ni-ca-tion/PcFPGAC
-ommunication.cpp
- []
-
-
-Overfull \hbox (22.75435pt too wide) in paragraph at lines 218--219
-[]\T1/cmr/m/n/10.95 clear out the "db" and "in-cre-men-tal_db" folder in "Fault
--In-jec-tion-Tester_restored"
- []
-
-[8] <USB_blaster_driver_problem.png, id=36, 474.27188pt x 352.31625pt>
+[3] [4] [5] [6] [7] [8]
+<USB_blaster_driver_problem.png, id=36, 474.27188pt x 352.31625pt>
 File: USB_blaster_driver_problem.png Graphic file (type png)
 
 <use USB_blaster_driver_problem.png>
@@ -212,91 +201,102 @@ Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 264.
 
 (pdftex.def)             Requested size: 334.60571pt x 248.57114pt.
 
-<installationGuide.png, id=38, 493.0922pt x 682.80093pt>
-File: installationGuide.png Graphic file (type png)
-
-<use installationGuide.png>
-Package pdftex.def Info: installationGuide.png used on input line 271.
-(pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
-
-
-LaTeX Warning: Float too large for page by 11.07558pt on input line 274.
-
-<USB_blaster_problem.png, id=39, 413.29407pt x 177.66376pt>
-File: USB_blaster_problem.png Graphic file (type png)
-
-<use USB_blaster_problem.png>
-Package pdftex.def Info: USB_blaster_problem.png used on input line 278.
-(pdftex.def)             Requested size: 418.25555pt x 179.79951pt.
-
-<USB_blaster_problem2.png, id=40, 800.9925pt x 173.14688pt>
+<USB_blaster_problem2.png, id=38, 800.9925pt x 173.14688pt>
 File: USB_blaster_problem2.png Graphic file (type png)
 
 <use USB_blaster_problem2.png>
-Package pdftex.def Info: USB_blaster_problem2.png used on input line 285.
+Package pdftex.def Info: USB_blaster_problem2.png used on input line 271.
 (pdftex.def)             Requested size: 418.25555pt x 90.41469pt.
- [9 <./USB_blaster_driver_problem.png>]
-<USB_serial_driver.png, id=46, 712.91344pt x 670.00313pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+[9 <./USB_blaster_driver_problem.png>]
+<USB_blaster_problem.png, id=44, 413.29407pt x 177.66376pt>
+File: USB_blaster_problem.png Graphic file (type png)
+
+<use USB_blaster_problem.png>
+Package pdftex.def Info: USB_blaster_problem.png used on input line 282.
+(pdftex.def)             Requested size: 418.25555pt x 179.79951pt.
+
+<USB_serial_driver.png, id=45, 712.91344pt x 670.00313pt>
 File: USB_serial_driver.png Graphic file (type png)
 
 <use USB_serial_driver.png>
-Package pdftex.def Info: USB_serial_driver.png used on input line 296.
+Package pdftex.def Info: USB_serial_driver.png used on input line 292.
 (pdftex.def)             Requested size: 418.25555pt x 393.07994pt.
 
-<FTDI_USB_SERIAL_CONVERTER_problem.png, id=47, 680.5425pt x 180.675pt>
+<FTDI_USB_SERIAL_CONVERTER_problem.png, id=46, 680.5425pt x 180.675pt>
 File: FTDI_USB_SERIAL_CONVERTER_problem.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem.png used on input li
-ne 303.
+ne 299.
 (pdftex.def)             Requested size: 418.25555pt x 111.0414pt.
 
-<FTDI_USB_SERIAL_CONVERTER_problem2.png, id=48, 814.54312pt x 177.66376pt>
+<FTDI_USB_SERIAL_CONVERTER_problem2.png, id=47, 814.54312pt x 177.66376pt>
 File: FTDI_USB_SERIAL_CONVERTER_problem2.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem2.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem2.png used on input l
-ine 310.
+ine 307.
 (pdftex.def)             Requested size: 418.25555pt x 91.2281pt.
 
-<inconsistent_set.png, id=49, 665.48625pt x 255.95625pt>
+<inconsistent_set.png, id=48, 665.48625pt x 255.95625pt>
 File: inconsistent_set.png Graphic file (type png)
 
 <use inconsistent_set.png>
-Package pdftex.def Info: inconsistent_set.png used on input line 326.
+Package pdftex.def Info: inconsistent_set.png used on input line 318.
 (pdftex.def)             Requested size: 418.25555pt x 160.87053pt.
+ [10 <./USB_blaster_problem2.png> <./USB_blaster_problem.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--347
+LaTeX Warning: Text page 11 contains only floats.
+
+
+Overfull \vbox (0.68115pt too high) has occurred while \output is active []
+
+
+[11 <./USB_serial_driver.png> <./FTDI_USB_SERIAL_CONVERTER_problem.png>]
+[12 <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 334--339
 
  []
 
-[10] [11 <./installationGuide.png>] [12 <./USB_blaster_problem.png> <./USB_blas
-ter_problem2.png>] [13 <./USB_serial_driver.png> <./FTDI_USB_SERIAL_CONVERTER_p
-roblem.png>] [14 <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set
-.png>] (documentation.aux) ) 
+<installationGuide.png, id=64, 493.0922pt x 682.80093pt>
+File: installationGuide.png Graphic file (type png)
+
+<use installationGuide.png>
+Package pdftex.def Info: installationGuide.png used on input line 347.
+(pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
+
+
+LaTeX Warning: Float too large for page by 11.07558pt on input line 350.
+
+[13] [14 <./installationGuide.png>] (documentation.aux) ) 
 Here is how much of TeX's memory you used:
- 2957 strings out of 493673
- 45593 string characters out of 3146818
- 165112 words of memory out of 3000000
- 6295 multiletter control sequences out of 15000+200000
+ 2964 strings out of 493673
+ 45645 string characters out of 3146818
+ 164172 words of memory out of 3000000
+ 6302 multiletter control sequences out of 15000+200000
  14867 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  41i,8n,46p,1158b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Vice88\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Vice88\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Us
-ers\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1095
-.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
-00\ecsx1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\ecrm1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9
-\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk><E:/WinProgram/MikTEX/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on documentation.pdf (14 pages, 402983 bytes).
+ <C:\Users\Vice88\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\
+Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk>
+ <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cbx1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecrm1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecsx1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecsx1440.pk> <C:\Users\Vice88\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Vice88\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Vi
+ce88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk><E
+:/WinProgram/MikTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on documentation.pdf (14 pages, 384307 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
+ 374 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
