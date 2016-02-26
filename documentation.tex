@@ -36,14 +36,14 @@
 \newpage
 
 \section{Software prerequisites}
-The software used in both projects were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is a design software for FPGAs (field programmable gate array) of Altera. With Quartus II VHDL- files were generated. The Quartus II software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration, to safe time by generating automatic connection-logic for different components. The developed VHDL code from Quartus II software can be imported to QSYS and is processed there to connect different components on the dev kit board. QSYS has to initiate, configure and connect the hps (hard processor system) to the fpga if they need to communicate.\\ In addition to the development software some driver have to be installed on the running operating system. To program the FPGA via the USB cable a special driver, Altera USB Blaster driver, needs to be installed. The installation of the Altera USB Blaster driver was not so intuitive as expected, cf. 3.5 problems.\\
+The software used in both projects were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is a design software for FPGAs (field programmable gate array) of Altera. With Quartus II VHDL- files were generated. The Quartus II software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration, to safe time by generating automatic connection-logic for different components. The developed VHDL code from Quartus II software can be imported to QSYS and is processed there to connect different components on the dev kit board. QSYS has to initiate, configure and connect the hps (hard processor system) to the FPGA if they need to communicate.\\ In addition to the development software some driver have to be installed on the running operating system. To program the FPGA via the USB cable a special driver, Altera USB Blaster driver, needs to be installed. The installation of the Altera USB Blaster driver was not so intuitive as expected, cf. 3.5 problems.\\
 The following software is used:
 \begin{itemize}
 	\item Windows 7/8.1 	
 	\item Quartus II (Version 14.1/15.0)
 	\item QSYS
 	\item Altera USB Blaster driver (insert version or revision)
-	\item portable os for the dev kit (partial reconfiguration)
+	\item portable os for the dev kit (partial reconfiguration) LINUX KERNEL
 	\item usb-to-serial converter driver (fault simulation)
 \end{itemize}
 \newpage
@@ -60,7 +60,7 @@ The FPGA is the mainly used component of the development kit board and therefore
 The Cyclone V is configured through the USB Blaster interface, where a bit stream is loaded to the memory of the board. This bit stream is lost once the energy is off.
 Alternatively an in-system NOR flash memory can be loaded with this bit stream, which safes it although the power is taken off.\\ Another way to configure the FPGA is to use the hard processor system (hps). This is done either while the boot process, with "U-Boot" or the "preloader", or after the operating system is fully booted.\\ While booting the preloader initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the FPGA access.\\ The universal boot loader initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ To get access from the FPGA to the main memory of the hps the Avalon-Memory-Mapped-Interface has to be configured. It enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection.\\
 To start a C++ program on the board an operation system for the hps is needed. The used operation system was a small sized portable linux system (KERNEL VERSION???) which was loaded to an sd card. 
-\subsection{The idea and the benefit}
+\subsection{Idea and the benefit}
 The concept of partial reconfiguration is highly desirable for some special purposes. 
 With this feature it would be easier to change partially designs or improve the functionality of an FPGA without interrupting its work progress. 
 Special applications may need to change some logic on an FPGA while another part of it is not allowed to stop. 
@@ -99,9 +99,9 @@ A short description of the projects design flow is listed here:
 	\item program FPGA via USB Blaster 
 \end{enumerate}
 Quartus II creates the logic in VHDL, while QSYS connects different system components which communicate and access each other. This informations are required to generate the "preloader" which coordinates the boot process. 
-%The next step of booting is the "universal boot loader" which configures the fpga and load the "linux-kernel". The Avalon-MM-Interface is required to grant the fpga access to the main memory of the HPS.\\
+%The next step of booting is the "universal boot loader" which configures the FPGA and load the "linux-kernel". The Avalon-MM-Interface is required to grant the FPGA access to the main memory of the HPS.\\
 
-%Two different led pattern, a wrapper and a freeze region were designed. The design partition were associated with the logiclock regions of the fpga
+%Two different led pattern, a wrapper and a freeze region were designed. The design partition were associated with the logiclock regions of the FPGA
 %	\item connect I/O signals with pins (QSYS)
 
 
@@ -150,15 +150,15 @@ After working 8-10 weeks on this topic the project has to be stopped due to the 
 		\item logic lock region assignments
 		\item pin assignments
 	\end{itemize}
-  \item file creation for programming the fpga (.pmsf, .msf, .sof, .rbf)
+  \item file creation for programming the FPGA (.pmsf, .msf, .sof, .rbf)
 \end{itemize}
 There is a slightly different approach to program the FPGA with partial reconfiguration. There a couple of files are needed and loaded to the FPGA. Therefore the files have to be created using the Quartus II software.
-\subsection{Discussion/Conclusion}
+\subsection{Discussion}
 Researching this topic is totally worth it. Partial reconfiguration can be used in time critical systems, like communication systems, where an abrupt stop of a data flow is critical. It is a nice way to improve configuration speed, because another part can still run. The field of partial reconfiguration is still a new topic in research and development and yet it is not integrated in industrial products. The main disadvantages are the cost of a special FPGA and special software instead of using an cheaper fully developed ASIC, and a lot more time must be spent on validation.
 \newpage
 \section{Fault simulation}
 \subsection{Prerequisites}
-The hardware used in this part of the project was a former dev kit from altera with a fpga Cyclone IV.\\
+The hardware used in this part of the project was a former dev kit from altera with a FPGA Cyclone IV.\\
 In addition to the software mentioned in section 1, there is some special software required for this part of the project:
 %In addition to the mentioned software in the beginning some special software is required:
 \begin{itemize}
@@ -206,7 +206,7 @@ After setting up the software prerequisites you can try to run the project. This
 	\item connect board and pc via RS232
 	\item execute IRA.exe [path to quartus], e.g. IRA.exe "C://Program Files//Altera"
 \end{enumerate}
-If it all worked well, the pc programs and tests the fpga. The communication link is via the RS232 interface, for which the usb to serial driver is necessary.\\
+If it all worked well, the pc programs and tests the FPGA. The communication link is via the RS232 interface, for which the usb to serial driver is necessary.\\
 Otherwise following common errors can occur while executing:
 \begin{itemize}
 	\item "Can not find quartus\textunderscore cdb"
