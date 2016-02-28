@@ -36,7 +36,7 @@
 \newpage
 
 \section{Software prerequisites}
-The software used in both projects were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is a design software for FPGAs (field programmable gate array) of Altera. With Quartus II VHDL- files were generated. The Quartus II software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration, to safe time by generating automatic connection-logic for different components. The developed VHDL code from Quartus II software can be imported to QSYS and is processed there to connect different components on the dev kit board. QSYS has to initiate, configure and connect the hps (hard processor system) to the FPGA if they need to communicate.\\ In addition to the development software some driver have to be installed on the running operating system. To program the FPGA via the USB cable a special driver, Altera USB Blaster driver, needs to be installed. The installation of the Altera USB Blaster driver was not so intuitive as expected, cf. 3.5 problems.\\
+The software used in both projects were Quartus II Version 14.1/15.0 and QSYS on Windows 7/8.1.\\Quartus II is a design software for FPGAs (field programmable gate array) of Altera. With Quartus II VHDL- files were generated. The Quartus II software can be configured to reach different design goals, e.g. time complexity, speed, optimization of compilation time or energy consumption.\\ QSYS is described as a tool for system integration, to safe time by generating automatic connection-logic for different components. The developed VHDL code from Quartus II software can be imported to QSYS and is processed there to connect different components on the dev kit board. QSYS has to initiate, configure and connect the hps (hard processor system) to the FPGA so that they can communicate.\\ In addition to the development software some driver have to be installed on the running operating system. To program the FPGA via the USB cable a special driver, Altera USB Blaster driver, needs to be installed. The installation of the Altera USB Blaster driver was not so intuitive as expected, cf. 3.5 problems. Also a driver for the USB-to-Serial connector needs to be installed.\\
 The following software is used:
 \begin{itemize}
 	\item Windows 7/8.1 	
@@ -49,16 +49,16 @@ The following software is used:
 \newpage
 \section{Partial reconfiguration}
 \subsection{Prerequisites}
-The hardware used in this project was a development kit board from altera, namely "Terasic DE1-SoC Development Kit". This board consists of the following core components: an FPGA, named Altera Cyclone V (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM memory and different interfaces like USB,JTAG and i2c.\\ The communication interfaces are a on board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for GPIO (general purpose input/output) pins.\\
-The FPGA is the mainly used component of the development kit board and therefore here are some useful facts about it (Cyclone V):\\
+The hardware used in this part of the project was a development kit board from altera, namely "Terasic DE1-SoC Development Kit". This board consists of the following core components: an FPGA, named Altera Cyclone V (5SCEMA5F31C6N), a dual-core Cortex-A9 (HPS), 1GB DDR3 and 64MB SDRAM memory and different interfaces like USB,JTAG and I2C.\\ The communication interfaces are an on-board USB-Blaster II, USB 2.0 ports, UART interface, Ethernet port and extended module for GPIO (general purpose input/output) pins.\\
+The FPGA is the mainly used component in this project and therefore here are some useful facts about it (Cyclone V):\\
 \begin{itemize}
-	\item 85000 logic cells on the board
-	\item 4450 kb embedded memory
+	\item 85.000 logic cells on the board
+	\item 4.450 kb embedded memory
 	\item access to an external 64 MB static random access memory (SRAM)
 	\item low energy consumption
 \end{itemize}
 The Cyclone V is configured through the USB Blaster interface, where a bit stream is loaded to the memory of the board. This bit stream is lost once the energy is off.
-Alternatively an in-system NOR flash memory can be loaded with this bit stream, which safes it although the power is taken off.\\ Another way to configure the FPGA is to use the hard processor system (hps). This is done either while the boot process, with "U-Boot" or the "preloader", or after the operating system is fully booted.\\ While booting the preloader initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the FPGA access.\\ The universal boot loader initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ To get access from the FPGA to the main memory of the hps the Avalon-Memory-Mapped-Interface has to be configured. It enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection.\\
+Alternatively an in-system NOR flash memory can be loaded with this bit stream, which safes it although the power is taken off.\\ Another way to configure the FPGA is to use the hard processor system (hps). This is done either while the boot process, with "U-Boot" or the "preloader", or after the operating system is fully booted.\\ While booting, the preloader initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the FPGA access.\\ The universal boot loader initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ To get access from the FPGA to the main memory of the hps the Avalon-Memory-Mapped-Interface has to be configured. It enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection.\\
 To start a C++ program on the board an operation system for the hps is needed. The used operation system was a small sized portable linux system (KERNEL VERSION???) which was loaded to an sd card. 
 \subsection{Idea and the benefit}
 The concept of partial reconfiguration is highly desirable for some special purposes. 
@@ -67,7 +67,7 @@ Special applications may need to change some logic on an FPGA while another part
 For example it is crucial to establish a reliable flow of data without interrupting it while another part of the FPGA can still change its logic.
 Therefore this concept is desirable in the field of communication systems. 
 A benefit of this idea is that the number of devices can be scaled down, therefore the power consumption and the cost can be reduced. 
-The tasks two or more FPGAs has handled before can now be handled by one FPGA due to the fact that only a small part of the FPGA is changed while the other part is still running.\\
+The tasks that two or more FPGAs has handled before can now be handled by one FPGA due to the fact that only a small part of the FPGA is changed while the other part is still running.\\
 The partial reconfiguration concept in this project is initialized by an internal host. The internal host starts the process of reconfiguration. For this the processor on the development kit (hps) programs the desired locig cells of the FPGA while the other part of the logic cells remains.
 % This initiation is done by an internal host which runs a C/C++ program. This C/C++ program is stored in the RAM (read access memory) of the development kit board.\\
 Partial reconfiguration in combination with the fault simulation explained later, give a high speed and efficient way to detect faults in hardware.
@@ -83,7 +83,7 @@ For this purpose the processor has to communicate with the FPGA and with the mem
 A short description of the projects design flow is listed here:
 \begin{enumerate}
 	\item planning the system for partial reconfiguration
-	\item identify which blocks to reconfigure 
+	\item identify which logic blocks to reconfigure 
 	%$\rightarrow$ led pattern for the led on DE1-SoC board
 	\item code the design in Quartus II
 	\begin{itemize}
@@ -131,13 +131,13 @@ Two crucial problems occurred during the work on partial reconfiguration.
 		\item could not be solved because a new FPGA was not affordable
 	\end{itemize} 
 \end{enumerate}
-After working 8-10 weeks on this topic the project has to be stopped due to the fact that partial reconfiguration is not supported by FPGA. At this time the status quo was:
+After working 8-10 weeks on this topic the project has to be stopped due to the fact that partial reconfiguration is not supported by the FPGA. At this time the status quo was:
 \begin{itemize}
   	\item literature survey
-  	\item soft- and hardware prerequisites
-  	\item project design flow
+  	\item set up soft- and hardware prerequisites
+  	\item create a project design flow
   	\item creating different revisions for partial reconfiguration in Quartus II
-  	\item VHDL design
+  	\item generate VHDL design
 	\begin{itemize}
 		\item top level
 		\item wrapper
@@ -152,22 +152,22 @@ After working 8-10 weeks on this topic the project has to be stopped due to the 
 	\end{itemize}
   \item file creation for programming the FPGA (.pmsf, .msf, .sof, .rbf)
 \end{itemize}
-There is a slightly different approach to program the FPGA with partial reconfiguration. There a couple of files are needed and loaded to the FPGA. Therefore the files have to be created using the Quartus II software.
+The process of programming the FPGA with partial reconfiguration is slightly different to the normal programming. A couple of files are needed and loaded to the FPGA in a specific order. Therefore the last step is to create these files using the Quartus II software.
 \subsection{Discussion}
-Researching this topic is totally worth it. Partial reconfiguration can be used in time critical systems, like communication systems, where an abrupt stop of a data flow is critical. It is a nice way to improve configuration speed, because another part can still run. The field of partial reconfiguration is still a new topic in research and development and yet it is not integrated in industrial products. The main disadvantages are the cost of a special FPGA and special software instead of using an cheaper fully developed ASIC, and a lot more time must be spent on validation.
+Researching on this topic is totally worth it. Partial reconfiguration can be used in time critical systems, like communication systems, where an abrupt stop of a data flow is critical. It is a nice way to improve configuration speed, because another part can still run. The field of partial reconfiguration is still a new topic in research and development and yet it is not integrated in industrial products. The main disadvantages are the cost of a special FPGA and special software instead of using an cheaper fully developed ASIC. Also a lot more time must be spent on validation before integrating such FPGAs into industrial products.
 \newpage
 \section{Fault simulation}
 \subsection{Prerequisites}
-The hardware used in this part of the project was a former dev kit from altera with a FPGA Cyclone IV.\\
+The hardware used in this part of the project was a former development kit from Altera with an FPGA Cyclone IV.\\
 In addition to the software mentioned in section 1, there is some special software required for this part of the project:
-%In addition to the mentioned software in the beginning some special software is required:
 \begin{itemize}
 	\item C++ compiler e.g. MinGW to compile C++ files to *.exe files
 	\item USB-to-Serial driver to get a connection between dev kit to pc via serial interface RS232
 \end{itemize}
-Also a couple of files from a former project of two students were provided. This part of the project is based on the former work and extends it.
+Also a couple of files from a former project of two students were provided. This part of the project is fully based on the former work of two students.
+
 \subsection{Idea and benefit}
-The idea of fault simulation is to detect stuck-at faults in an efficient way in hardware. This increase the fault detection speed and therefore much more faults can be detected in shorter time periods. The concept is to compare a test pattern with a original circuit under test with a changed circuit under test. Therefore a special test pattern is loaded to the ram of the FPGA via USB Blaster. The circuit under test is realized by two different circuits. One circuit without fault pattern and one with changed logical cells. The output of both circuits is lead to a logical XOR gate which identifies if an error is detected or not. If the outputs of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise no fault is detected. This output is saved into a FIFO (first in first out) memory and then transmitted to the pc for documentation. For this communication link the usb to serial connection is needed.\\
+The idea of fault simulation is to detect stuck-at faults in an efficient way in hardware. This increases the fault detection speed in contrast to software. The concept is to compare a test pattern on a original circuit under test with a changed circuit. Therefore a special test pattern is loaded to the RAM of the FPGA via USB Blaster. One circuit without fault pattern and one with changed logical cells is generated. The output of both circuits is lead to a logical XOR gate which identifies if an error is detected or not. If the output of both circuits distinguishes the XOR gate give a logical one, hence a fault. Otherwise there was no fault or there is no fault detected. This output is saved into a FIFO (first in first out) memory and then transmitted to the pc for documentation. For this communication link the USB-to-Serial connection is needed.\\
 %Efficient fault simulation in hardware FPGA. modification of the circuit with special changes to the look up tables. evaluation and pc communication with serial interface rs232.\\
 %To detect faults some lcells are modified. 
 % \textbf{lcell}
@@ -178,9 +178,9 @@ The idea of fault simulation is to detect stuck-at faults in an efficient way in
 %	\item every lcell have a look-up table, which defines the output
 %	\item the function of a particular  lcell can be changed by hand
 %\end{itemize}
-The idea of the Maximum fanout free cones (MFFC), adopted from a former project,   is to assign as many as possible gates to one logic cell. This would reduce the size used for this circuits. The creation of maximum fanout free cones is an algorithm to minimize the number of gates in one logic cell. This algorithm is implemented by a the former work of two students.
+The idea of the Maximum fanout free cones (MFFC), adopted from the former work,   is to assign as many as possible gates to one logic cell. This would reduce the size used for this circuits. The creation of maximum fanout free cones is an algorithm to minimize the number of gates in one logic cell. 
 % The look-up table (LUT) can be calculated for every locig cell in Quartus. The evaluation is done over the rs232 interface and a personal computer. 
-The goal is a very fast and efficient way to detect faults.
+The goal and benefit of this feature is a very fast and efficient way to detect faults in hardware.
 
 
 \subsection{Preparation and process to execute the fault simulation}
@@ -192,17 +192,17 @@ After setting up the software prerequisites you can try to run the project. This
 		\item compile this project
 		\item close Quartus II
 	\end{itemize}
-	\item create IRA.exe in root folder (make.batch file)
+	\item create IRA.exe in root folder (batch file)
 	\begin{itemize}
 	\item open command window and change directory to FaultConfiguration
-	\item execute: \textit{g++ IRA.cpp CGate.cpp CGate.h CComponent.h -o ..IRA.exe}	
+	\item execute: \textit{"g++ IRA.cpp CGate.cpp CGate.h CComponent.h -o ../IRA.exe"}	
 	\end{itemize}
-	\item create FaultInjectionTester.exe in root folder (make.batch file)
+	\item create FaultInjectionTester.exe in root folder (batch file)
 	\begin{itemize}
 	\item open command window and change directory to FPGACommunication
-	\item execute: \textit{g++ FaultInjectionTester.cpp PcFPGACommunication.cpp PcFPGACommunication.h -o .."FaultInjectionTester.exe"}
+	\item execute: \textit{"g++ FaultInjectionTester.cpp PcFPGACommunication.cpp PcFPGACommunication.h -o ../FaultInjectionTester.exe"}
 	\end{itemize}
-	\item Connect board and pc via USB Blaster
+	\item connect board and pc via USB Blaster
 	\item connect board and pc via RS232
 	\item execute IRA.exe [path to quartus], e.g. IRA.exe "C://Program Files//Altera"
 \end{enumerate}
@@ -258,7 +258,7 @@ Debugging and troubleshooting several errors became the main part of this projec
 %\begin{enumerate}
 %	\item driver installation of USB Blaster II
 %\end{enumerate}
-\ref{p1} Also it seems to be intuitive to install a USB driver, it was quite difficult to install in Windows 8.1 x64 pro. Although it is an official driver from Altera Windows 8.1 x64 pro does not support this driver because it has no driver signature. First of all the following problem was encountered : 
+\ref{p1}. Also it seems to be intuitive to install a USB driver, it was quite difficult to install in Windows 8.1 x64 pro. Although it is an official driver from Altera Windows 8.1 x64 pro does not support this driver because it has no driver signature. First of all the following problem was encountered : 
 \begin{figure}[!ht]
 	\centering
   \includegraphics[width=0.8\textwidth, angle=0]{USB_blaster_driver_problem.png}
@@ -283,9 +283,8 @@ After successfully installing the driver, another problem may occur while starti
 	\caption{AlteraUSBBlaster problem}
 	\label{usbblaster1}	
 \end{figure}
-It seems to be correlated to the driver installed but that is not exactly validated .
 
-\ref{p2} If the USB Blaster driver was successfully installed, there came another problem concerning the usb to serial conversion for the communication link between pc and dev kit. The driver could not be installed and hence it could not be started see Fig. \ref{usb_serial_problem} and \ref{ftdi_problem1}
+\ref{p2}. If the USB Blaster driver was successfully installed, there came another problem concerning the USB-to-Serial conversion for the communication link between pc and dev kit. The driver could not be installed and hence it could not be started see Fig. \ref{usb_serial_problem} and \ref{ftdi_problem1}.
 
 \begin{figure}[!ht]
 	\centering
@@ -300,7 +299,7 @@ It seems to be correlated to the driver installed but that is not exactly valida
 	\caption{FTDI chip problem}
 	\label{ftdi_problem1}
 \end{figure}
-If you try to install the driver with the standard windows application you run into this problem, see Fig. \ref{ftdi_problem2}
+If you try to install the driver with the standard windows application you run into the problem seen in Fig. \ref{ftdi_problem2}.
 
 \begin{figure}[!ht]
 	\centering
@@ -308,26 +307,26 @@ If you try to install the driver with the standard windows application you run i
 	\caption{Driver install not successful}
 	\label{ftdi_problem2}	
 \end{figure}
- In the end the driver for the FTDI Chip was searched in the internet and installed. 
-\ref{p3}
-There was an error in the design flow of the former work. It was realised that there was no compilation after changing LUTs of circuit under test.\\
+
+ In the end the driver for the FTDI Chip was searched in the internet and installed.\\
+\ref{p3}. There was an error in the design flow of the former work. It was realised that there was no compilation after changing LUTs of circuit under test.\\
 If all the troubleshooting about the installation of different drivers were made another error was detected while executing the project.\\
-\ref{p4.1} The execution error occuring while execution was:
+\ref{p4.1} The error occurring while execution was: "inconsistant set or reset of compile started variable" see Fig. \ref{inconsistentset}.
 \begin{figure}[!ht]
 	\centering
   \includegraphics[width=1\textwidth, angle=0]{inconsistent_set.png}
 	\caption{inconsistent set}
 	\label{inconsistentset}	
 \end{figure}
-To solve this, you have to follow this:
+
+To solve the problem of "inconsistant set" you have to follow this:
 \begin{enumerate}
 	 		\item clear out the "db" and "incremental\textunderscore db" folder in "FaultInjectionTester\textunderscore restored" folder
 		\item recompile Quartus project
 		\item execute IRA.exe once more
 \end{enumerate}
 
-\ref{p4.2}
-If an error message appears which states that a quartus\textunderscore pgm or cdb or whatever could not be found, you have to check the path of your quartus installation.
+\ref{p4.2}. If an error message appears which states that a "quartus\textunderscore pgm" or "quartus\textunderscore cdb could not be found", you have to check the path of your quartus installation.
 
 \newpage
 \subsection{Discussion and future work}
