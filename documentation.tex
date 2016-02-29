@@ -42,9 +42,9 @@ The following software is used:
 	\item Windows 7/8.1 	
 	\item Quartus II (Version 14.1/15.0)
 	\item QSYS
-	\item Altera USB Blaster driver (insert version or revision)
-	\item portable os for the dev kit (partial reconfiguration) LINUX KERNEL
-	\item usb-to-serial converter driver (fault simulation)
+	\item Altera USB Blaster driver 
+	\item portable os for the dev kit Unix KERNEL
+	\item usb-to-serial converter driver 
 \end{itemize}
 \newpage
 \section{Partial reconfiguration}
@@ -59,7 +59,7 @@ The FPGA is the mainly used component in this project and therefore here are som
 \end{itemize}
 The Cyclone V is configured through the USB Blaster interface, where a bit stream is loaded to the memory of the board. This bit stream is lost once the energy is off.
 Alternatively an in-system NOR flash memory can be loaded with this bit stream, which safes it although the power is taken off.\\ Another way to configure the FPGA is to use the hard processor system (hps). This is done either while the boot process, with "U-Boot" or the "preloader", or after the operating system is fully booted.\\ While booting, the preloader initiates the clock, is responsible for multiplexing pins, configures the main memory and loads the U-Boot.  The configuration of the main memory of the hard processor system and the AXI Bridges is crucial, because these have to grant the FPGA access.\\ The universal boot loader initiates and tests hardware components. Also it downloads and executes application software. This boot-loader is required to initiate the boot process of the UNIX-kernel. \\ To get access from the FPGA to the main memory of the hps the Avalon-Memory-Mapped-Interface has to be configured. It enables efficient read- and write operations, interrupts, clocks, resets and control progresses. This Avalon-MM-Interface enables address based read- and write procedures in a master/slave connection.\\
-To start a C++ program on the board an operation system for the hps is needed. The used operation system was a small sized portable linux system (KERNEL VERSION???) which was loaded to an sd card. 
+To start a C++ program on the board an operation system for the hps is needed. The used operation system was a small sized portable linux system which was loaded to an sd card. 
 \subsection{Idea and the benefit}
 The concept of partial reconfiguration is highly desirable for some special purposes. 
 With this feature it would be easier to change partially designs or improve the functionality of an FPGA without interrupting its work progress. 
@@ -158,7 +158,13 @@ Researching on this topic is totally worth it. Partial reconfiguration can be us
 \newpage
 \section{Fault simulation}
 \subsection{Prerequisites}
-The hardware used in this part of the project was a former development kit from Altera with an FPGA Cyclone IV.\\
+The hardware used in this part of the project was a former development kit from Altera DE2-115 with an 60-nm Cyclone IV E FPGA.\\
+\begin{itemize}
+	\item 115.000 logic elements
+	\item 4  Mbits embedded memory
+	\item 60-nm low power process
+	\item low energy consumption
+\end{itemize}
 In addition to the software mentioned in section 1, there is some special software required for this part of the project:
 \begin{itemize}
 	\item C++ compiler e.g. MinGW to compile C++ files to *.exe files

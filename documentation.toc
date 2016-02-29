@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {3}Fault simulation}{7}
 \contentsline {subsection}{\numberline {3.1}Prerequisites}{7}
 \contentsline {subsection}{\numberline {3.2}Idea and benefit}{7}
-\contentsline {subsection}{\numberline {3.3}Preparation and process to execute the fault simulation}{7}
+\contentsline {subsection}{\numberline {3.3}Preparation and process to execute the fault simulation}{8}
 \contentsline {subsection}{\numberline {3.4}Implementation and improvement}{8}
 \contentsline {subsection}{\numberline {3.5}Problems and troubleshooting}{9}
-\contentsline {subsection}{\numberline {3.6}Discussion and future work}{13}
+\contentsline {subsection}{\numberline {3.6}Discussion and future work}{11}
