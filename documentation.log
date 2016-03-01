@@ -1,66 +1,54 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.7)  29 FEB 2016 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.5)  1 MAR 2016 12:47
 entering extended mode
 **documentation.tex
+(documentation.tex
+LaTeX2e <2015/01/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+(E:\WinProgram\MikTEX\tex\latex\koma-script\scrartcl.cls
+Document Class: scrartcl 2015/10/03 v3.19a KOMA-Script document class (article)
 
-("D:\Studium\Master\Albert-Ludwig Uni Freiburg\4. Semester\Projekt_Rechnerarchi
-tektur\Projektbericht\FPGA_Projektbericht-master\FPGA_Projektbericht-master\doc
-umentation.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\scrartcl.cls
-Document Class: scrartcl 2015/05/06 v3.17a KOMA-Script document class (article)
-
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\scrkbase.sty
-Package: scrkbase 2015/05/06 v3.17a KOMA-Script package (KOMA-Script-dependent 
+(E:\WinProgram\MikTEX\tex\latex\koma-script\scrkbase.sty
+Package: scrkbase 2015/10/03 v3.19a KOMA-Script package (KOMA-Script-dependent 
 basics and keyval usage)
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\scrbase.sty
-Package: scrbase 2015/05/06 v3.17a KOMA-Script package (KOMA-Script-independent
+(E:\WinProgram\MikTEX\tex\latex\koma-script\scrbase.sty
+Package: scrbase 2015/10/03 v3.19a KOMA-Script package (KOMA-Script-independent
  basics and keyval usage)
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\graphics\keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(E:\WinProgram\MikTEX\tex\latex\graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\scrlfile.sty
-Package: scrlfile 2015/05/06 v3.17a KOMA-Script package (loading files)
+(E:\WinProgram\MikTEX\tex\latex\koma-script\scrlfile.sty
+Package: scrlfile 2015/10/03 v3.19a KOMA-Script package (loading files)
 
-Package scrlfile, 2015/05/06 v3.17a KOMA-Script package (loading files)
+Package scrlfile, 2015/10/03 v3.19a KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
-))) (F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\tocbasic.sty
-Package: tocbasic 2015/05/06 v3.17a KOMA-Script package (handling toc-files)
+))) (E:\WinProgram\MikTEX\tex\latex\koma-script\tocbasic.sty
+Package: tocbasic 2015/10/03 v3.19a KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 122.
+(tocbasic)             for `toc' on input line 123.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 123.
+(tocbasic)             for `lof' on input line 124.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 124.
+(tocbasic)             for `lot' on input line 125.
 Class scrartcl Info: File `scrsize11pt.clo' used instead of
-(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 194
-2.
+(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 203
+3.
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\scrsize11pt.clo
-File: scrsize11pt.clo 2015/05/06 v3.17a KOMA-Script font size class option (11p
+(E:\WinProgram\MikTEX\tex\latex\koma-script\scrsize11pt.clo
+File: scrsize11pt.clo 2015/10/03 v3.19a KOMA-Script font size class option (11p
 t)
 )
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\koma-script\typearea.sty
-Package: typearea 2015/05/06 v3.17a KOMA-Script package (type area)
+(E:\WinProgram\MikTEX\tex\latex\koma-script\typearea.sty
+Package: typearea 2015/10/03 v3.19a KOMA-Script package (type area)
 
-Package typearea, 2015/05/06 v3.17a KOMA-Script package (type area)
+Package typearea, 2015/10/03 v3.19a KOMA-Script package (type area)
                   Copyright (C) Frank Neukam, 1992-1994
                   Copyright (C) Markus Kohm, 1994-
 
@@ -86,7 +74,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.6pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1485.
+(typearea)              on input line 1509.
 )
 \c@part=\count80
 \c@section=\count81
@@ -94,58 +82,56 @@ Package typearea Info: These are the values describing the layout:
 \c@subsubsection=\count83
 \c@paragraph=\count84
 \c@subparagraph=\count85
+LaTeX Info: Redefining \textsubscript on input line 3906.
 \abovecaptionskip=\skip46
 \belowcaptionskip=\skip47
 \c@pti@nb@sid@b@x=\box26
 \c@figure=\count86
 \c@table=\count87
 \bibindent=\dimen102
-) (F:\eclipse\MikTex_x64\MikTex\tex\latex\base\inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+) (E:\WinProgram\MikTEX\tex\latex\base\inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\base\ansinew.def
-File: ansinew.def 2008/03/30 v1.1d Input encoding file
+(E:\WinProgram\MikTEX\tex\latex\base\ansinew.def
+File: ansinew.def 2015/03/17 v1.2c Input encoding file
 ))
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\base\fontenc.sty
+(E:\WinProgram\MikTEX\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\base\t1enc.def
+(E:\WinProgram\MikTEX\tex\latex\base\t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\graphics\graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(E:\WinProgram\MikTEX\tex\latex\graphics\graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\graphics\graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(E:\WinProgram\MikTEX\tex\latex\graphics\graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\graphics\trig.sty
+(E:\WinProgram\MikTEX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\00miktex\graphics.cfg
+(E:\WinProgram\MikTEX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\pdftex-def\pdftex.def
+(E:\WinProgram\MikTEX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(F:\eclipse\MikTex_x64\MikTex\tex\generic\oberdiek\infwarerr.sty
+(E:\WinProgram\MikTEX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(F:\eclipse\MikTex_x64\MikTex\tex\generic\oberdiek\ltxcmds.sty
+(E:\WinProgram\MikTEX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-)
-("D:\Studium\Master\Albert-Ludwig Uni Freiburg\4. Semester\Projekt_Rechnerarchi
-tektur\Projektbericht\FPGA_Projektbericht-master\FPGA_Projektbericht-master\doc
-umentation.aux")
+) (documentation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -158,7 +144,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
- (F:\eclipse\MikTex_x64\MikTex\tex\context\base\supp-pdf.mkii
+
+(E:\WinProgram\MikTEX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count89
 \scratchdimen=\dimen105
@@ -173,17 +160,14 @@ LaTeX Font Info:    ... okay on input line 29.
 \everyMPtoPDFconversion=\toks18
 )
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 35.
- (F:\eclipse\MikTex_x64\MikTex\tex\latex\base\t1cmss.fd
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+ (E:\WinProgram\MikTEX\tex\latex\base\t1cmss.fd
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 35.
-
-("D:\Studium\Master\Albert-Ludwig Uni Freiburg\4. Semester\Projekt_Rechnerarchi
-tektur\Projektbericht\FPGA_Projektbericht-master\FPGA_Projektbericht-master\doc
-umentation.toc"
+ (documentation.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -195,11 +179,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/Vice88/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
 
-(F:\eclipse\MikTex_x64\MikTex\tex\latex\base\omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+(E:\WinProgram\MikTEX\tex\latex\base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
@@ -217,7 +201,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
 File: USB_blaster_driver_problem.png Graphic file (type png)
 
 <use USB_blaster_driver_problem.png>
-Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 270.
+Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 272.
 
 (pdftex.def)             Requested size: 334.60571pt x 248.57114pt.
 
@@ -225,10 +209,10 @@ Package pdftex.def Info: USB_blaster_driver_problem.png used on input line 270.
 File: USB_blaster_problem2.png Graphic file (type png)
 
 <use USB_blaster_problem2.png>
-Package pdftex.def Info: USB_blaster_problem2.png used on input line 277.
+Package pdftex.def Info: USB_blaster_problem2.png used on input line 279.
 (pdftex.def)             Requested size: 418.25555pt x 90.41469pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
 
  []
 
@@ -236,14 +220,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 282--284
 File: USB_blaster_problem.png Graphic file (type png)
 
 <use USB_blaster_problem.png>
-Package pdftex.def Info: USB_blaster_problem.png used on input line 288.
+Package pdftex.def Info: USB_blaster_problem.png used on input line 290.
 (pdftex.def)             Requested size: 418.25555pt x 179.79951pt.
 
 <USB_serial_driver.png, id=40, 712.91344pt x 670.00313pt>
 File: USB_serial_driver.png Graphic file (type png)
 
 <use USB_serial_driver.png>
-Package pdftex.def Info: USB_serial_driver.png used on input line 297.
+Package pdftex.def Info: USB_serial_driver.png used on input line 299.
 (pdftex.def)             Requested size: 418.25555pt x 393.07994pt.
 
 <FTDI_USB_SERIAL_CONVERTER_problem.png, id=41, 680.5425pt x 180.675pt>
@@ -251,7 +235,7 @@ File: FTDI_USB_SERIAL_CONVERTER_problem.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem.png used on input li
-ne 304.
+ne 306.
 (pdftex.def)             Requested size: 418.25555pt x 111.0414pt.
 
 <FTDI_USB_SERIAL_CONVERTER_problem2.png, id=42, 814.54312pt x 177.66376pt>
@@ -259,37 +243,17 @@ File: FTDI_USB_SERIAL_CONVERTER_problem2.png Graphic file (type png)
 
 <use FTDI_USB_SERIAL_CONVERTER_problem2.png>
 Package pdftex.def Info: FTDI_USB_SERIAL_CONVERTER_problem2.png used on input l
-ine 312.
+ine 314.
 (pdftex.def)             Requested size: 418.25555pt x 91.2281pt.
 
 <inconsistent_set.png, id=43, 665.48625pt x 255.95625pt>
 File: inconsistent_set.png Graphic file (type png)
 
 <use inconsistent_set.png>
-Package pdftex.def Info: inconsistent_set.png used on input line 323.
+Package pdftex.def Info: inconsistent_set.png used on input line 325.
 (pdftex.def)             Requested size: 418.25555pt x 160.87053pt.
- [9] [10 <D:/Studium/Master/Albert-Ludwig Uni Freiburg/4. Semester/Projekt_Rech
-nerarchitektur/Projektbericht/FPGA_Projektbericht-master/FPGA_Projektbericht-ma
-ster/USB_blaster_driver_problem.png> <D:/Studium/Master/Albert-Ludwig Uni Freib
-urg/4. Semester/Projekt_Rechnerarchitektur/Projektbericht/FPGA_Projektbericht-m
-aster/FPGA_Projektbericht-master/USB_blaster_problem2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 339--344
-
- []
-
-<installationGuide.png, id=53, 493.0922pt x 682.80093pt>
-File: installationGuide.png Graphic file (type png)
-
-<use installationGuide.png>
-Package pdftex.def Info: installationGuide.png used on input line 352.
-(pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
-
-
-LaTeX Warning: Float too large for page by 11.07558pt on input line 355.
-
-[11 <D:/Studium/Master/Albert-Ludwig Uni Freiburg/4. Semester/Projekt_Rechnerar
-chitektur/Projektbericht/FPGA_Projektbericht-master/FPGA_Projektbericht-master/
-USB_blaster_problem.png>]
+ [9] [10 <./USB_blaster_driver_problem.png> <./USB_blaster_problem2.png>] [11 <
+./USB_blaster_problem.png>]
 
 LaTeX Warning: Text page 12 contains only floats.
 
@@ -297,44 +261,46 @@ LaTeX Warning: Text page 12 contains only floats.
 Overfull \vbox (0.68115pt too high) has occurred while \output is active []
 
 
-[12 <D:/Studium/Master/Albert-Ludwig Uni Freiburg/4. Semester/Projekt_Rechnerar
-chitektur/Projektbericht/FPGA_Projektbericht-master/FPGA_Projektbericht-master/
-USB_serial_driver.png> <D:/Studium/Master/Albert-Ludwig Uni Freiburg/4. Semeste
-r/Projekt_Rechnerarchitektur/Projektbericht/FPGA_Projektbericht-master/FPGA_Pro
-jektbericht-master/FTDI_USB_SERIAL_CONVERTER_problem.png>] [13 <D:/Studium/Mast
-er/Albert-Ludwig Uni Freiburg/4. Semester/Projekt_Rechnerarchitektur/Projektber
-icht/FPGA_Projektbericht-master/FPGA_Projektbericht-master/FTDI_USB_SERIAL_CONV
-ERTER_problem2.png> <D:/Studium/Master/Albert-Ludwig Uni Freiburg/4. Semester/P
-rojekt_Rechnerarchitektur/Projektbericht/FPGA_Projektbericht-master/FPGA_Projek
-tbericht-master/inconsistent_set.png>] [14 <D:/Studium/Master/Albert-Ludwig Uni
- Freiburg/4. Semester/Projekt_Rechnerarchitektur/Projektbericht/FPGA_Projektber
-icht-master/FPGA_Projektbericht-master/installationGuide.png>]
-("D:\Studium\Master\Albert-Ludwig Uni Freiburg\4. Semester\Projekt_Rechnerarchi
-tektur\Projektbericht\FPGA_Projektbericht-master\FPGA_Projektbericht-master\doc
-umentation.aux") ) 
+[12 <./USB_serial_driver.png> <./FTDI_USB_SERIAL_CONVERTER_problem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 341--346
+
+ []
+
+<installationGuide.png, id=62, 493.0922pt x 682.80093pt>
+File: installationGuide.png Graphic file (type png)
+
+<use installationGuide.png>
+Package pdftex.def Info: installationGuide.png used on input line 354.
+(pdftex.def)             Requested size: 418.25555pt x 579.1958pt.
+
+
+LaTeX Warning: Float too large for page by 11.07558pt on input line 357.
+
+[13 <./FTDI_USB_SERIAL_CONVERTER_problem2.png> <./inconsistent_set.png>]
+[14 <./installationGuide.png>] (documentation.aux) ) 
 Here is how much of TeX's memory you used:
- 2921 strings out of 493921
- 46522 string characters out of 3146879
- 157960 words of memory out of 3000000
- 6204 multiletter control sequences out of 15000+200000
+ 2964 strings out of 493673
+ 45645 string characters out of 3146818
+ 165173 words of memory out of 3000000
+ 6302 multiletter control sequences out of 15000+200000
  14867 words of font info for 36 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 41i,8n,46p,1195b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Markus\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbi1095.pk> <C:\Users\Markus\AppData\Local\MiKTeX\2.9\fonts\p
-k\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Markus\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Markus\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Markus
-\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1095.pk> <C:\U
-sers\Markus\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx144
-0.pk> <C:\Users\Markus\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecrm1440.pk> <C:\Users\Markus\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi600\ecsx1200.pk> <C:\Users\Markus\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecsx2074.pk><F:/eclipse/MikTex_x64/MikTex/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb>
-Output written on documentation.pdf (14 pages, 433389 bytes).
+ 1025 hyphenation exceptions out of 8191
+ 41i,8n,46p,1195b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Vice88\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Vice8
+8\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\
+Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx10
+95.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dp
+i600\ecrm1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
+appen\ec\dpi600\ecsx1095.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\jknappen\ec\dpi600\ecsx1440.pk> <C:\Users\Vice88\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Vice88\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Vice88\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk><E:/Win
+Program/MikTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on documentation.pdf (14 pages, 391556 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
+ 370 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
